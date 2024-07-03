@@ -1,0 +1,9 @@
+eu\ai4work\context\monitoring\models\ExampleCommitMessage$ExampleCommitMessageBuilder.class
+eu\ai4work\context\monitoring\monitors\ExampleCommitMonitor.class
+eu\ai4work\context\monitoring\parser\ExampleCommitParser.class
+eu\ai4work\context\monitoring\models\ExampleCommitMessage.class
+eu\ai4work\context\monitoring\config\models\datasources\ExampleDataSource$1.class
+eu\ai4work\context\monitoring\models\ExampleCommitDataModel.class
+eu\ai4work\context\monitoring\analyser\ExampleAnalyser.class
+eu\ai4work\context\monitoring\config\models\datasources\ExampleDataSource.class
+eu\ai4work\context\extraction\ServiceMain.class

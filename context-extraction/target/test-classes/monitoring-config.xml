@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--suppress XmlPathReference -->
+<config xmlns="http://www.atb-bremen.de"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.atb-bremen.de monitoring-config.xsd">
+
+    <indexes>
+        <index id="index-example" location="target/test-classes/data/indexes/example"/>
+    </indexes>
+
+    <datasources>
+        <datasource id="datasource-example"
+                    type="webservice"
+                    monitor="org.soprano-project.context.monitoring.monitors.ExampleMonitor"
+                    uri="https://gitlab.example.com"
+                    options="interval=60000&amp;startDelay=5000&amp;token=s3cr3t&amp;server=localhost&amp;port=5672&amp;username=guest&amp;password=guest&amp;outgoing-queue=code_repo_recommendation_queue&amp;outgoing-durable=false"
+                    class="org.soprano-project.context.monitoring.config.models.datasources.ExampleDataSource"/>
+    </datasources>
+
+    <interpreters>
+        <interpreter id="interpreter-example">
+            <configuration type="*"
+                           parser="org.soprano-project.context-extraction.monitoring.parser.ExampleParser"
+                           analyser="org.soprano-project.context-extraction.monitoring.analyser.ExampleAnalyser"/>
+        </interpreter>
+    </interpreters>
+
+    <monitors>
+        <monitor id="monitor-example"
+                 datasource="datasource-example"
+                 interpreter="interpreter-example"
+                 index="index-example"/>
+    </monitors>
+
+</config>
