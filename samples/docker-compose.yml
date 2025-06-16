@@ -1,0 +1,33 @@
+version: "3.8"
+
+services:
+  # rabbitmq - this is the datasource configured in config/monitoring-config.xml
+  rabbitmq:
+    image: rabbitmq:3.10.0-alpine
+    hostname: rabbitmq
+    ports:
+      - "5672:5672"
+    networks:
+      - context-awareness
+  # context-awareness
+  context-awareness:
+    image: ghcr.io/ai4work-project/context-awareness/context-extraction:latest
+    depends_on:
+      - rabbitmq
+    volumes:
+      # configuration files are mounted to '/opt/context-extraction/config'
+      # see org.eclipse.opensmartclide.contexthandling.ServiceMain for other options
+      - ./config:/opt/context-extraction/config
+    # wait 5 seconds for rabbitmq to start before starting smartclide-monitoring
+    entrypoint:
+      [
+        "sh",
+        "-c",
+        "sleep 5s && java -Djava.security.egd=file:/dev/./urandom -cp app/libs/*:app/resources:app/classes org.eclipse.opensmartclide.contexthandling.ServiceMain",
+      ]
+    networks:
+      - context-awareness
+
+networks:
+  context-extraction:
+    name: context-extraction

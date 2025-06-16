@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config xmlns="http://www.atb-bremen.de"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.atb-bremen.de monitoring-config.xsd">
+
+    <indexes>
+        <index id="index-gitlab" location="/opt/smartclide/data/indexes/gitlab"/>
+    </indexes>
+
+    <datasources>
+        <!--Change the value of "token" in the "options" to a valid GitLab API access token-->
+        <datasource id="datasource-gitlab"
+                    type="webservice"
+                    monitor="org.eclipse.opensmartclide.context.monitoring.monitors.GitlabCommitMonitor"
+                    uri="https://gitlab.com"
+                    options="interval=60000&amp;startDelay=5000&amp;token=CHANGE_ME&amp;server=rabbitmq&amp;port=5672&amp;username=guest&amp;password=guest&amp;outgoing-queue=code_repo_recommendation_queue&amp;outgoing-durable=false"
+                    class="org.eclipse.opensmartclide.context.monitoring.config.models.datasources.GitlabDataSource"/>
+    </datasources>
+
+    <interpreters>
+        <interpreter id="interpreter-gitlab">
+            <configuration type="*"
+                           parser="org.eclipse.opensmartclide.context.monitoring.parser.GitlabCommitParser"
+                           analyser="org.eclipse.opensmartclide.context.monitoring.analyser.GitlabCommitAnalyser"/>
+        </interpreter>
+    </interpreters>
+
+    <monitors>
+        <monitor id="monitor-gitlab"
+                 datasource="datasource-gitlab"
+                 interpreter="interpreter-gitlab"
+                 index="index-gitlab"/>
+    </monitors>
+</config>
