@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog prefer="public" xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
+    <group id="Folder Repository, directory=, recursive=true, Auto-Update=true, version=2" prefer="public" xml:base="">
+        <uri id="Automatically generated entry, Timestamp=1794412376159" name="http://www.atb-bremen.de/ontologies/kga-generic-context.owl" uri="genericContextModel.rdf"/>
+        <uri id="Automatically generated entry, Timestamp=1794412376159" name="http://www.loa-cnr.it/ontologies/DOLCE-Lite.owl" uri="imports/DOLCE-Lite.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1794412376159" name="http://www.loa-cnr.it/ontologies/ExtendedDnS.owl" uri="imports/ExtendedDnS.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1794412376159" name="http://www.loa-cnr.it/ontologies/InformationObjects.owl" uri="imports/InformationObjects.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1794412376159" name="http://www.loa-cnr.it/ontologies/SpatialRelations.owl" uri="imports/SpatialRelations.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1794412376159" name="http://www.loa-cnr.it/ontologies/TemporalRelations.owl" uri="imports/TemporalRelations.owl"/>
+    </group>
+</catalog>

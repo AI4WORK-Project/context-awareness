@@ -1,0 +1,1299 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.atb-bremen.de/ontologies/kga-generic-context.owl#"
+     xml:base="http://www.atb-bremen.de/ontologies/kga-generic-context.owl"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:xsp="http://www.owl-ontologies.com/2005/08/07/xsp.owl#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+     xmlns:swrl="http://www.w3.org/2003/11/swrl#"
+     xmlns:vann="http://purl.org/vocab/vann/"
+     xmlns:swrlb="http://www.w3.org/2003/11/swrlb#"
+     xmlns:terms="http://purl.org/dc/terms/"
+     xmlns:protege="http://protege.stanford.edu/plugins/owl/protege#"
+     xmlns:ExtendedDnS="http://www.loa-cnr.it/ontologies/ExtendedDnS.owl#"
+     xmlns:ace_lexicon="http://attempto.ifi.uzh.ch/ace_lexicon#">
+    <owl:Ontology rdf:about="http://www.atb-bremen.de/ontologies/generic-context-model/">
+        <owl:imports rdf:resource="http://www.loa-cnr.it/ontologies/ExtendedDnS.owl"/>
+        <owl:imports rdf:resource="http://www.loa-cnr.it/ontologies/InformationObjects.owl"/>
+        <owl:imports rdf:resource="http://www.loa-cnr.it/ontologies/SpatialRelations.owl"/>
+        <owl:imports rdf:resource="http://www.loa-cnr.it/ontologies/TemporalRelations.owl"/>
+        <rdfs:label xml:lang="en">Generic Context Model</rdfs:label>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#definition -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2004/02/skos/core#definition"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.atb-bremen.de/ontologies/generic-context-model/belongsToContext -->
+
+    <owl:ObjectProperty rdf:about="http://www.atb-bremen.de/ontologies/generic-context-model/belongsToContext">
+        <rdfs:domain rdf:resource="http://www.atb-bremen.de/ontologies/generic-context-model/ContextResource"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.atb-bremen.de/ontologies/generic-context-model/configuredAt -->
+
+    <owl:ObjectProperty rdf:about="http://www.atb-bremen.de/ontologies/generic-context-model/configuredAt">
+        <rdfs:domain rdf:resource="http://www.atb-bremen.de/ontologies/generic-context-model/ContextResource"/>
+        <rdfs:range rdf:resource="http://www.loa-cnr.it/ontologies/DOLCE-Lite.owl#time-interval"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.atb-bremen.de/ontologies/generic-context-model/configures -->
+
+    <owl:ObjectProperty rdf:about="http://www.atb-bremen.de/ontologies/generic-context-model/configures">
+        <owl:inverseOf rdf:resource="http://www.atb-bremen.de/ontologies/generic-context-model/isConfiguredBy"/>
+        <rdfs:domain rdf:resource="http://www.atb-bremen.de/ontologies/generic-context-model/Configuration"/>
+        <rdfs:range rdf:resource="http://www.atb-bremen.de/ontologies/generic-context-model/ContextResource"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.atb-bremen.de/ontologies/generic-context-model/configuresResource -->
+
+    <owl:ObjectProperty rdf:about="http://www.atb-bremen.de/ontologies/generic-context-model/configuresResource">
+        <rdfs:subPropertyOf rdf:resource="http://www.atb-bremen.de/ontologies/generic-context-model/configures"/>
+        <owl:inverseOf rdf:resource="http://www.atb-bremen.de/ontologies/generic-context-model/resourceConfiguredBy"/>
+        <rdfs:domain rdf:resource="http://www.atb-bremen.de/ontologies/generic-context-model/Configuration"/>
+        <rdfs:range rdf:resource="http://www.atb-bremen.de/ontologies/generic-context-model/ResourceInformation"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.atb-bremen.de/ontologies/generic-context-model/contains -->
+
+    <owl:ObjectProperty rdf:about="http://www.atb-bremen.de/ontologies/generic-context-model/contains">
+        <rdfs:subPropertyOf rdf:resource="http://www.atb-bremen.de/ontologies/generic-context-model/processes"/>
+        <owl:inverseOf rdf:resource="http://www.atb-bremen.de/ontologies/generic-context-model/isContainedBy"/>
+        <rdfs:domain rdf:resource="http://www.atb-bremen.de/ontologies/generic-context-model/Container"/>
+        <rdfs:range rdf:resource="http://www.atb-bremen.de/ontologies/generic-context-model/Component"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.atb-bremen.de/ontologies/generic-context-model/deviceSensoredBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.atb-bremen.de/ontologies/generic-context-model/deviceSensoredBy">
+        <rdfs:subPropertyOf rdf:resource="http://www.atb-bremen.de/ontologies/generic-context-model/isSensoredBy"/>
+        <owl:inverseOf rdf:resource="http://www.atb-bremen.de/ontologies/generic-context-model/sensorsDevice"/>
+        <rdfs:domain rdf:resource="http://www.atb-bremen.de/ontologies/generic-context-model/ProcessingDevice"/>
+        <rdfs:range rdf:resource="http://www.atb-bremen.de/ontologies/generic-context-model/SensoricalDevice"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.atb-bremen.de/ontologies/generic-context-model/distanceSensoredBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.atb-bremen.de/ontologies/generic-context-model/distanceSensoredBy">
+        <rdfs:subPropertyOf rdf:resource="http://www.atb-bremen.de/ontologies/generic-context-model/isSensoredBy"/>
+        <owl:inverseOf rdf:resource="http://www.atb-bremen.de/ontologies/generic-context-model/sensorsDistance"/>
+        <rdfs:domain rdf:resource="http://www.atb-bremen.de/ontologies/generic-context-model/DistanceUnit"/>
+        <rdfs:range rdf:resource="http://www.atb-bremen.de/ontologies/generic-context-model/DistanceSensor"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.atb-bremen.de/ontologies/generic-context-model/has -->
+
+    <owl:ObjectProperty rdf:about="http://www.atb-bremen.de/ontologies/generic-context-model/has"/>
+    
+
+
+    <!-- http://www.atb-bremen.de/ontologies/generic-context-model/hasDevicePart -->
+
+    <owl:ObjectProperty rdf:about="http://www.atb-bremen.de/ontologies/generic-context-model/hasDevicePart">
+        <rdfs:domain rdf:resource="http://www.atb-bremen.de/ontologies/generic-context-model/GenericDevice"/>
+        <rdfs:range rdf:resource="http://www.atb-bremen.de/ontologies/generic-context-model/GenericDevice"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.atb-bremen.de/ontologies/generic-context-model/hasProcessingStep -->
+
+    <owl:ObjectProperty rdf:about="http://www.atb-bremen.de/ontologies/generic-context-model/hasProcessingStep">
+        <rdfs:domain rdf:resource="http://www.atb-bremen.de/ontologies/generic-context-model/ProductionProcess"/>
+        <rdfs:range rdf:resource="http://www.atb-bremen.de/ontologies/generic-context-model/ProcessStep"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.atb-bremen.de/ontologies/generic-context-model/hasSensor -->
+
+    <owl:ObjectProperty rdf:about="http://www.atb-bremen.de/ontologies/generic-context-model/hasSensor">
+        <owl:inverseOf rdf:resource="http://www.atb-bremen.de/ontologies/generic-context-model/providesSensoricalInformation"/>
+        <rdfs:domain rdf:resource="http://www.atb-bremen.de/ontologies/generic-context-model/ProcessingDevice"/>
+        <rdfs:range rdf:resource="http://www.atb-bremen.de/ontologies/generic-context-model/Activity"/>
+        <rdfs:range rdf:resource="http://www.atb-bremen.de/ontologies/generic-context-model/SensoricalDevice"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.atb-bremen.de/ontologies/generic-context-model/includes -->
+
+    <owl:ObjectProperty rdf:about="http://www.atb-bremen.de/ontologies/generic-context-model/includes"/>
+    
+
+
+    <!-- http://www.atb-bremen.de/ontologies/generic-context-model/isConfiguredBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.atb-bremen.de/ontologies/generic-context-model/isConfiguredBy">
+        <rdfs:domain rdf:resource="http://www.atb-bremen.de/ontologies/generic-context-model/ContextResource"/>
+        <rdfs:range rdf:resource="http://www.atb-bremen.de/ontologies/generic-context-model/Configuration"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.atb-bremen.de/ontologies/generic-context-model/isContainedBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.atb-bremen.de/ontologies/generic-context-model/isContainedBy">
+        <rdfs:subPropertyOf rdf:resource="http://www.atb-bremen.de/ontologies/generic-context-model/isProcessedBy"/>
+        <rdfs:domain rdf:resource="http://www.atb-bremen.de/ontologies/generic-context-model/Component"/>
+        <rdfs:range rdf:resource="http://www.atb-bremen.de/ontologies/generic-context-model/Container"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.atb-bremen.de/ontologies/generic-context-model/isProcessedBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.atb-bremen.de/ontologies/generic-context-model/isProcessedBy">
+        <owl:inverseOf rdf:resource="http://www.atb-bremen.de/ontologies/generic-context-model/processes"/>
+        <rdfs:domain rdf:resource="http://www.atb-bremen.de/ontologies/generic-context-model/ResourceInformation"/>
+        <rdfs:range rdf:resource="http://www.atb-bremen.de/ontologies/generic-context-model/ProcessingDevice"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.atb-bremen.de/ontologies/generic-context-model/isPumpedBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.atb-bremen.de/ontologies/generic-context-model/isPumpedBy">
+        <rdfs:subPropertyOf rdf:resource="http://www.atb-bremen.de/ontologies/generic-context-model/isProcessedBy"/>
+        <owl:inverseOf rdf:resource="http://www.atb-bremen.de/ontologies/generic-context-model/pumps"/>
+        <rdfs:domain rdf:resource="http://www.atb-bremen.de/ontologies/generic-context-model/Component"/>
+        <rdfs:range rdf:resource="http://www.atb-bremen.de/ontologies/generic-context-model/Pump"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.atb-bremen.de/ontologies/generic-context-model/isRegulatedBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.atb-bremen.de/ontologies/generic-context-model/isRegulatedBy">
+        <rdfs:subPropertyOf rdf:resource="http://www.atb-bremen.de/ontologies/generic-context-model/isProcessedBy"/>
+        <owl:inverseOf rdf:resource="http://www.atb-bremen.de/ontologies/generic-context-model/regulates"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.atb-bremen.de/ontologies/generic-context-model/Component"/>
+                    <rdf:Description rdf:about="http://www.atb-bremen.de/ontologies/generic-context-model/Unit"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.atb-bremen.de/ontologies/generic-context-model/Valve"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.atb-bremen.de/ontologies/generic-context-model/isSensoredBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.atb-bremen.de/ontologies/generic-context-model/isSensoredBy">
+        <owl:inverseOf rdf:resource="http://www.atb-bremen.de/ontologies/generic-context-model/sensors"/>
+        <rdfs:domain rdf:resource="http://www.atb-bremen.de/ontologies/generic-context-model/ContextResource"/>
+        <rdfs:range rdf:resource="http://www.atb-bremen.de/ontologies/generic-context-model/SensoricalDevice"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.atb-bremen.de/ontologies/generic-context-model/isUsedByProcess -->
+
+    <owl:ObjectProperty rdf:about="http://www.atb-bremen.de/ontologies/generic-context-model/isUsedByProcess">
+        <owl:inverseOf rdf:resource="http://www.atb-bremen.de/ontologies/generic-context-model/usesResource"/>
+        <rdfs:domain rdf:resource="http://www.atb-bremen.de/ontologies/generic-context-model/ResourceInformation"/>
+        <rdfs:range rdf:resource="http://www.atb-bremen.de/ontologies/generic-context-model/ProductionProcess"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.atb-bremen.de/ontologies/generic-context-model/owns -->
+
+    <owl:ObjectProperty rdf:about="http://www.atb-bremen.de/ontologies/generic-context-model/owns"/>
+    
+
+
+    <!-- http://www.atb-bremen.de/ontologies/generic-context-model/performsActivity -->
+
+    <owl:ObjectProperty rdf:about="http://www.atb-bremen.de/ontologies/generic-context-model/performsActivity">
+        <rdfs:domain rdf:resource="http://www.atb-bremen.de/ontologies/generic-context-model/ProcessingDevice"/>
+        <rdfs:range rdf:resource="http://www.atb-bremen.de/ontologies/generic-context-model/Activity"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.atb-bremen.de/ontologies/generic-context-model/pressureSensoredBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.atb-bremen.de/ontologies/generic-context-model/pressureSensoredBy">
+        <rdfs:subPropertyOf rdf:resource="http://www.atb-bremen.de/ontologies/generic-context-model/isSensoredBy"/>
+        <owl:inverseOf rdf:resource="http://www.atb-bremen.de/ontologies/generic-context-model/sensorsPressure"/>
+        <rdfs:domain rdf:resource="http://www.atb-bremen.de/ontologies/generic-context-model/PressureUnit"/>
+        <rdfs:range rdf:resource="http://www.atb-bremen.de/ontologies/generic-context-model/PressureSensor"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.atb-bremen.de/ontologies/generic-context-model/processes -->
+
+    <owl:ObjectProperty rdf:about="http://www.atb-bremen.de/ontologies/generic-context-model/processes">
+        <rdfs:domain rdf:resource="http://www.atb-bremen.de/ontologies/generic-context-model/ProcessingDevice"/>
+        <rdfs:range rdf:resource="http://www.atb-bremen.de/ontologies/generic-context-model/ResourceInformation"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.atb-bremen.de/ontologies/generic-context-model/providesSensoricalInformation -->
+
+    <owl:ObjectProperty rdf:about="http://www.atb-bremen.de/ontologies/generic-context-model/providesSensoricalInformation">
+        <rdfs:domain rdf:resource="http://www.atb-bremen.de/ontologies/generic-context-model/SensoricalDevice"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.atb-bremen.de/ontologies/generic-context-model/pumps -->
+
+    <owl:ObjectProperty rdf:about="http://www.atb-bremen.de/ontologies/generic-context-model/pumps">
+        <rdfs:subPropertyOf rdf:resource="http://www.atb-bremen.de/ontologies/generic-context-model/processes"/>
+        <rdfs:domain rdf:resource="http://www.atb-bremen.de/ontologies/generic-context-model/Pump"/>
+        <rdfs:range rdf:resource="http://www.atb-bremen.de/ontologies/generic-context-model/Component"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.atb-bremen.de/ontologies/generic-context-model/regulates -->
+
+    <owl:ObjectProperty rdf:about="http://www.atb-bremen.de/ontologies/generic-context-model/regulates">
+        <rdfs:subPropertyOf rdf:resource="http://www.atb-bremen.de/ontologies/generic-context-model/processes"/>
+        <rdfs:domain rdf:resource="http://www.atb-bremen.de/ontologies/generic-context-model/Valve"/>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.atb-bremen.de/ontologies/generic-context-model/Component"/>
+                    <rdf:Description rdf:about="http://www.atb-bremen.de/ontologies/generic-context-model/Unit"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.atb-bremen.de/ontologies/generic-context-model/requiredForProcess -->
+
+    <owl:ObjectProperty rdf:about="http://www.atb-bremen.de/ontologies/generic-context-model/requiredForProcess">
+        <owl:inverseOf rdf:resource="http://www.atb-bremen.de/ontologies/generic-context-model/usesProcessModel"/>
+        <rdfs:range rdf:resource="http://www.atb-bremen.de/ontologies/generic-context-model/ProductionProcess"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.atb-bremen.de/ontologies/generic-context-model/resourceConfiguredBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.atb-bremen.de/ontologies/generic-context-model/resourceConfiguredBy">
+        <rdfs:subPropertyOf rdf:resource="http://www.atb-bremen.de/ontologies/generic-context-model/isConfiguredBy"/>
+        <rdfs:domain rdf:resource="http://www.atb-bremen.de/ontologies/generic-context-model/ResourceInformation"/>
+        <rdfs:range rdf:resource="http://www.atb-bremen.de/ontologies/generic-context-model/Configuration"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.atb-bremen.de/ontologies/generic-context-model/sensoredAt -->
+
+    <owl:ObjectProperty rdf:about="http://www.atb-bremen.de/ontologies/generic-context-model/sensoredAt">
+        <rdfs:domain rdf:resource="http://www.atb-bremen.de/ontologies/generic-context-model/ContextResource"/>
+        <rdfs:range rdf:resource="http://www.loa-cnr.it/ontologies/DOLCE-Lite.owl#time-interval"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.atb-bremen.de/ontologies/generic-context-model/sensors -->
+
+    <owl:ObjectProperty rdf:about="http://www.atb-bremen.de/ontologies/generic-context-model/sensors">
+        <rdfs:domain rdf:resource="http://www.atb-bremen.de/ontologies/generic-context-model/SensoricalDevice"/>
+        <rdfs:range rdf:resource="http://www.atb-bremen.de/ontologies/generic-context-model/ContextResource"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.atb-bremen.de/ontologies/generic-context-model/sensorsDevice -->
+
+    <owl:ObjectProperty rdf:about="http://www.atb-bremen.de/ontologies/generic-context-model/sensorsDevice">
+        <rdfs:subPropertyOf rdf:resource="http://www.atb-bremen.de/ontologies/generic-context-model/sensors"/>
+        <rdfs:domain rdf:resource="http://www.atb-bremen.de/ontologies/generic-context-model/SensoricalDevice"/>
+        <rdfs:range rdf:resource="http://www.atb-bremen.de/ontologies/generic-context-model/ProcessingDevice"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.atb-bremen.de/ontologies/generic-context-model/sensorsDistance -->
+
+    <owl:ObjectProperty rdf:about="http://www.atb-bremen.de/ontologies/generic-context-model/sensorsDistance">
+        <rdfs:subPropertyOf rdf:resource="http://www.atb-bremen.de/ontologies/generic-context-model/sensors"/>
+        <rdfs:domain rdf:resource="http://www.atb-bremen.de/ontologies/generic-context-model/DistanceSensor"/>
+        <rdfs:range rdf:resource="http://www.atb-bremen.de/ontologies/generic-context-model/DistanceUnit"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.atb-bremen.de/ontologies/generic-context-model/sensorsPressure -->
+
+    <owl:ObjectProperty rdf:about="http://www.atb-bremen.de/ontologies/generic-context-model/sensorsPressure">
+        <rdfs:subPropertyOf rdf:resource="http://www.atb-bremen.de/ontologies/generic-context-model/sensors"/>
+        <rdfs:domain rdf:resource="http://www.atb-bremen.de/ontologies/generic-context-model/PressureSensor"/>
+        <rdfs:range rdf:resource="http://www.atb-bremen.de/ontologies/generic-context-model/PressureUnit"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.atb-bremen.de/ontologies/generic-context-model/sensorsSpeed -->
+
+    <owl:ObjectProperty rdf:about="http://www.atb-bremen.de/ontologies/generic-context-model/sensorsSpeed">
+        <rdfs:subPropertyOf rdf:resource="http://www.atb-bremen.de/ontologies/generic-context-model/sensors"/>
+        <owl:inverseOf rdf:resource="http://www.atb-bremen.de/ontologies/generic-context-model/speedSensoredBy"/>
+        <rdfs:domain rdf:resource="http://www.atb-bremen.de/ontologies/generic-context-model/SpeedSensor"/>
+        <rdfs:range rdf:resource="http://www.atb-bremen.de/ontologies/generic-context-model/SpeedUnit"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.atb-bremen.de/ontologies/generic-context-model/sensorsTemperature -->
+
+    <owl:ObjectProperty rdf:about="http://www.atb-bremen.de/ontologies/generic-context-model/sensorsTemperature">
+        <rdfs:subPropertyOf rdf:resource="http://www.atb-bremen.de/ontologies/generic-context-model/sensors"/>
+        <owl:inverseOf rdf:resource="http://www.atb-bremen.de/ontologies/generic-context-model/temperatureSensoredBy"/>
+        <rdfs:domain rdf:resource="http://www.atb-bremen.de/ontologies/generic-context-model/TemperatureSensor"/>
+        <rdfs:range rdf:resource="http://www.atb-bremen.de/ontologies/generic-context-model/TemperatureUnit"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.atb-bremen.de/ontologies/generic-context-model/sensorsTime -->
+
+    <owl:ObjectProperty rdf:about="http://www.atb-bremen.de/ontologies/generic-context-model/sensorsTime">
+        <rdfs:subPropertyOf rdf:resource="http://www.atb-bremen.de/ontologies/generic-context-model/sensors"/>
+        <owl:inverseOf rdf:resource="http://www.atb-bremen.de/ontologies/generic-context-model/timeSensoredBy"/>
+        <rdfs:domain rdf:resource="http://www.atb-bremen.de/ontologies/generic-context-model/TimeSensor"/>
+        <rdfs:range rdf:resource="http://www.atb-bremen.de/ontologies/generic-context-model/TimeUnit"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.atb-bremen.de/ontologies/generic-context-model/sensorsUnit -->
+
+    <owl:ObjectProperty rdf:about="http://www.atb-bremen.de/ontologies/generic-context-model/sensorsUnit">
+        <rdfs:subPropertyOf rdf:resource="http://www.atb-bremen.de/ontologies/generic-context-model/sensors"/>
+        <owl:inverseOf rdf:resource="http://www.atb-bremen.de/ontologies/generic-context-model/unitSensoredBy"/>
+        <rdfs:domain rdf:resource="http://www.atb-bremen.de/ontologies/generic-context-model/SensoricalDevice"/>
+        <rdfs:range rdf:resource="http://www.atb-bremen.de/ontologies/generic-context-model/Unit"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.atb-bremen.de/ontologies/generic-context-model/sensorsVolume -->
+
+    <owl:ObjectProperty rdf:about="http://www.atb-bremen.de/ontologies/generic-context-model/sensorsVolume">
+        <rdfs:subPropertyOf rdf:resource="http://www.atb-bremen.de/ontologies/generic-context-model/sensors"/>
+        <owl:inverseOf rdf:resource="http://www.atb-bremen.de/ontologies/generic-context-model/volumeSensoredBy"/>
+        <rdfs:domain rdf:resource="http://www.atb-bremen.de/ontologies/generic-context-model/VolumeSensor"/>
+        <rdfs:range rdf:resource="http://www.atb-bremen.de/ontologies/generic-context-model/VolumeUnit"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.atb-bremen.de/ontologies/generic-context-model/speedSensoredBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.atb-bremen.de/ontologies/generic-context-model/speedSensoredBy">
+        <rdfs:subPropertyOf rdf:resource="http://www.atb-bremen.de/ontologies/generic-context-model/isSensoredBy"/>
+        <rdfs:domain rdf:resource="http://www.atb-bremen.de/ontologies/generic-context-model/SpeedUnit"/>
+        <rdfs:range rdf:resource="http://www.atb-bremen.de/ontologies/generic-context-model/SpeedSensor"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.atb-bremen.de/ontologies/generic-context-model/temperatureSensoredBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.atb-bremen.de/ontologies/generic-context-model/temperatureSensoredBy">
+        <rdfs:subPropertyOf rdf:resource="http://www.atb-bremen.de/ontologies/generic-context-model/isSensoredBy"/>
+        <rdfs:domain rdf:resource="http://www.atb-bremen.de/ontologies/generic-context-model/TemperatureUnit"/>
+        <rdfs:range rdf:resource="http://www.atb-bremen.de/ontologies/generic-context-model/TemperatureSensor"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.atb-bremen.de/ontologies/generic-context-model/timeSensoredBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.atb-bremen.de/ontologies/generic-context-model/timeSensoredBy">
+        <rdfs:subPropertyOf rdf:resource="http://www.atb-bremen.de/ontologies/generic-context-model/isSensoredBy"/>
+        <rdfs:domain rdf:resource="http://www.atb-bremen.de/ontologies/generic-context-model/TimeUnit"/>
+        <rdfs:range rdf:resource="http://www.atb-bremen.de/ontologies/generic-context-model/TimeSensor"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.atb-bremen.de/ontologies/generic-context-model/unitSensoredBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.atb-bremen.de/ontologies/generic-context-model/unitSensoredBy">
+        <rdfs:subPropertyOf rdf:resource="http://www.atb-bremen.de/ontologies/generic-context-model/isSensoredBy"/>
+        <rdfs:domain rdf:resource="http://www.atb-bremen.de/ontologies/generic-context-model/Unit"/>
+        <rdfs:range rdf:resource="http://www.atb-bremen.de/ontologies/generic-context-model/SensoricalDevice"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.atb-bremen.de/ontologies/generic-context-model/usesProcessModel -->
+
+    <owl:ObjectProperty rdf:about="http://www.atb-bremen.de/ontologies/generic-context-model/usesProcessModel">
+        <rdfs:domain rdf:resource="http://www.atb-bremen.de/ontologies/generic-context-model/ProductionProcess"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.atb-bremen.de/ontologies/generic-context-model/usesResource -->
+
+    <owl:ObjectProperty rdf:about="http://www.atb-bremen.de/ontologies/generic-context-model/usesResource">
+        <rdfs:domain rdf:resource="http://www.atb-bremen.de/ontologies/generic-context-model/ProductionProcess"/>
+        <rdfs:range rdf:resource="http://www.atb-bremen.de/ontologies/generic-context-model/ResourceInformation"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.atb-bremen.de/ontologies/generic-context-model/volumeSensoredBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.atb-bremen.de/ontologies/generic-context-model/volumeSensoredBy">
+        <rdfs:subPropertyOf rdf:resource="http://www.atb-bremen.de/ontologies/generic-context-model/isSensoredBy"/>
+        <rdfs:domain rdf:resource="http://www.atb-bremen.de/ontologies/generic-context-model/VolumeUnit"/>
+        <rdfs:range rdf:resource="http://www.atb-bremen.de/ontologies/generic-context-model/VolumeSensor"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.atb-bremen.de/ontologies/generic-context-model/applicationScenarioIdentifier -->
+
+    <owl:DatatypeProperty rdf:about="http://www.atb-bremen.de/ontologies/generic-context-model/applicationScenarioIdentifier">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.atb-bremen.de/ontologies/generic-context-model/basedOnMonitoringData -->
+
+    <owl:DatatypeProperty rdf:about="http://www.atb-bremen.de/ontologies/generic-context-model/basedOnMonitoringData">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.atb-bremen.de/ontologies/generic-context-model/businessCaseIdentifier -->
+
+    <owl:DatatypeProperty rdf:about="http://www.atb-bremen.de/ontologies/generic-context-model/businessCaseIdentifier">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.atb-bremen.de/ontologies/generic-context-model/capturedAt -->
+
+    <owl:DatatypeProperty rdf:about="http://www.atb-bremen.de/ontologies/generic-context-model/capturedAt">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.atb-bremen.de/ontologies/generic-context-model/configurationType -->
+
+    <owl:DatatypeProperty rdf:about="http://www.atb-bremen.de/ontologies/generic-context-model/configurationType">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.atb-bremen.de/ontologies/generic-context-model/Configuration"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.atb-bremen.de/ontologies/generic-context-model/identifier -->
+
+    <owl:DatatypeProperty rdf:about="http://www.atb-bremen.de/ontologies/generic-context-model/identifier">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.atb-bremen.de/ontologies/generic-context-model/unitFloatValue -->
+
+    <owl:DatatypeProperty rdf:about="http://www.atb-bremen.de/ontologies/generic-context-model/unitFloatValue">
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.atb-bremen.de/ontologies/generic-context-model/DistanceUnit"/>
+                    <rdf:Description rdf:about="http://www.atb-bremen.de/ontologies/generic-context-model/Unit"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.atb-bremen.de/ontologies/generic-context-model/unitIntegerValue -->
+
+    <owl:DatatypeProperty rdf:about="http://www.atb-bremen.de/ontologies/generic-context-model/unitIntegerValue">
+        <rdfs:domain rdf:resource="http://www.atb-bremen.de/ontologies/generic-context-model/Unit"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.atb-bremen.de/ontologies/generic-context-model/AIActivity -->
+
+    <owl:Class rdf:about="http://www.atb-bremen.de/ontologies/generic-context-model/AIActivity">
+        <rdfs:subClassOf rdf:resource="http://www.atb-bremen.de/ontologies/generic-context-model/Activity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.atb-bremen.de/ontologies/generic-context-model/Activity -->
+
+    <owl:Class rdf:about="http://www.atb-bremen.de/ontologies/generic-context-model/Activity">
+        <rdfs:subClassOf rdf:resource="http://www.loa-cnr.it/ontologies/ExtendedDnS.owl#activity"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.loa-cnr.it/ontologies/DOLCE-Lite.owl#participant-in"/>
+                <owl:someValuesFrom rdf:resource="http://www.atb-bremen.de/ontologies/generic-context-model/ProcessStep"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>Activity is an action performed by someone (Actor or Generic Device/Software) in order to achieve a specific goal.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.atb-bremen.de/ontologies/generic-context-model/Actor -->
+
+    <owl:Class rdf:about="http://www.atb-bremen.de/ontologies/generic-context-model/Actor">
+        <rdfs:subClassOf rdf:resource="http://www.loa-cnr.it/ontologies/ExtendedDnS.owl#agentive-figure"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.atb-bremen.de/ontologies/generic-context-model/owns"/>
+                <owl:someValuesFrom rdf:resource="http://www.atb-bremen.de/ontologies/generic-context-model/ContextResource"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.atb-bremen.de/ontologies/generic-context-model/owns"/>
+                <owl:someValuesFrom rdf:resource="http://www.loa-cnr.it/ontologies/ExtendedDnS.owl#material-artifact"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="http://www.atb-bremen.de/ontologies/generic-context-model/GenericDevice"/>
+        <owl:disjointWith rdf:resource="http://www.atb-bremen.de/ontologies/generic-context-model/Product"/>
+        <owl:disjointWith rdf:resource="http://www.atb-bremen.de/ontologies/generic-context-model/ProductionProcess"/>
+        <owl:disjointWith rdf:resource="http://www.atb-bremen.de/ontologies/generic-context-model/ResourceInformation"/>
+        <skos:definition>Actor is an entity that describes the humans involved in situations</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- http://www.atb-bremen.de/ontologies/generic-context-model/Bandwith -->
+
+    <owl:Class rdf:about="http://www.atb-bremen.de/ontologies/generic-context-model/Bandwith">
+        <rdfs:subClassOf rdf:resource="http://www.atb-bremen.de/ontologies/generic-context-model/ResourceInformation"/>
+        <owl:disjointWith rdf:resource="http://www.atb-bremen.de/ontologies/generic-context-model/Component"/>
+        <owl:disjointWith rdf:resource="http://www.atb-bremen.de/ontologies/generic-context-model/Protocol"/>
+        <owl:disjointWith rdf:resource="http://www.atb-bremen.de/ontologies/generic-context-model/Timeslot"/>
+        <owl:disjointWith rdf:resource="http://www.atb-bremen.de/ontologies/generic-context-model/Unit"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.atb-bremen.de/ontologies/generic-context-model/Bar -->
+
+    <owl:Class rdf:about="http://www.atb-bremen.de/ontologies/generic-context-model/Bar">
+        <rdfs:subClassOf rdf:resource="http://www.atb-bremen.de/ontologies/generic-context-model/PressureUnit"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.atb-bremen.de/ontologies/generic-context-model/Celsius -->
+
+    <owl:Class rdf:about="http://www.atb-bremen.de/ontologies/generic-context-model/Celsius">
+        <rdfs:subClassOf rdf:resource="http://www.atb-bremen.de/ontologies/generic-context-model/Degrees"/>
+        <owl:disjointWith rdf:resource="http://www.atb-bremen.de/ontologies/generic-context-model/Fahrenheit"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.atb-bremen.de/ontologies/generic-context-model/Component -->
+
+    <owl:Class rdf:about="http://www.atb-bremen.de/ontologies/generic-context-model/Component">
+        <rdfs:subClassOf rdf:resource="http://www.atb-bremen.de/ontologies/generic-context-model/ResourceInformation"/>
+        <owl:disjointWith rdf:resource="http://www.atb-bremen.de/ontologies/generic-context-model/Protocol"/>
+        <owl:disjointWith rdf:resource="http://www.atb-bremen.de/ontologies/generic-context-model/Timeslot"/>
+        <owl:disjointWith rdf:resource="http://www.atb-bremen.de/ontologies/generic-context-model/Unit"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.atb-bremen.de/ontologies/generic-context-model/Configuration -->
+
+    <owl:Class rdf:about="http://www.atb-bremen.de/ontologies/generic-context-model/Configuration">
+        <rdfs:subClassOf rdf:resource="http://www.loa-cnr.it/ontologies/ExtendedDnS.owl#concept"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.atb-bremen.de/ontologies/generic-context-model/includes"/>
+                <owl:someValuesFrom rdf:resource="http://www.atb-bremen.de/ontologies/generic-context-model/Activity"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.atb-bremen.de/ontologies/generic-context-model/includes"/>
+                <owl:someValuesFrom rdf:resource="http://www.atb-bremen.de/ontologies/generic-context-model/GenericDevice"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.atb-bremen.de/ontologies/generic-context-model/includes"/>
+                <owl:someValuesFrom rdf:resource="http://www.atb-bremen.de/ontologies/generic-context-model/GenericSoftware"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.atb-bremen.de/ontologies/generic-context-model/includes"/>
+                <owl:someValuesFrom rdf:resource="http://www.atb-bremen.de/ontologies/generic-context-model/Product"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.atb-bremen.de/ontologies/generic-context-model/includes"/>
+                <owl:someValuesFrom rdf:resource="http://www.atb-bremen.de/ontologies/generic-context-model/ProductionProcess"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <skos:definition>Configuration is the definition of the parameters that are involved in the situations that we want to identify</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- http://www.atb-bremen.de/ontologies/generic-context-model/ConstructionRobot -->
+
+    <owl:Class rdf:about="http://www.atb-bremen.de/ontologies/generic-context-model/ConstructionRobot">
+        <rdfs:subClassOf rdf:resource="http://www.atb-bremen.de/ontologies/generic-context-model/Robot"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.atb-bremen.de/ontologies/generic-context-model/hasSensor"/>
+                <owl:someValuesFrom rdf:resource="http://www.atb-bremen.de/ontologies/generic-context-model/DistanceSensor"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.atb-bremen.de/ontologies/generic-context-model/hasSensor"/>
+                <owl:someValuesFrom rdf:resource="http://www.atb-bremen.de/ontologies/generic-context-model/SpeedSensor"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.atb-bremen.de/ontologies/generic-context-model/performsActivity"/>
+                <owl:someValuesFrom rdf:resource="http://www.atb-bremen.de/ontologies/generic-context-model/ConstructionRobotActivity"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.atb-bremen.de/ontologies/generic-context-model/ConstructionRobotActivity -->
+
+    <owl:Class rdf:about="http://www.atb-bremen.de/ontologies/generic-context-model/ConstructionRobotActivity">
+        <rdfs:subClassOf rdf:resource="http://www.atb-bremen.de/ontologies/generic-context-model/RobotActivity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.atb-bremen.de/ontologies/generic-context-model/Container -->
+
+    <owl:Class rdf:about="http://www.atb-bremen.de/ontologies/generic-context-model/Container">
+        <rdfs:subClassOf rdf:resource="http://www.atb-bremen.de/ontologies/generic-context-model/ProcessingDevice"/>
+        <owl:disjointWith rdf:resource="http://www.atb-bremen.de/ontologies/generic-context-model/NetworkDevice"/>
+        <owl:disjointWith rdf:resource="http://www.atb-bremen.de/ontologies/generic-context-model/ProductionUnit"/>
+        <owl:disjointWith rdf:resource="http://www.atb-bremen.de/ontologies/generic-context-model/Pump"/>
+        <owl:disjointWith rdf:resource="http://www.atb-bremen.de/ontologies/generic-context-model/Valve"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.atb-bremen.de/ontologies/generic-context-model/ContextResource -->
+
+    <owl:Class rdf:about="http://www.atb-bremen.de/ontologies/generic-context-model/ContextResource">
+        <rdfs:subClassOf rdf:resource="http://www.loa-cnr.it/ontologies/ExtendedDnS.owl#material-artifact"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.loa-cnr.it/ontologies/ExtendedDnS.owl#plays"/>
+                <owl:someValuesFrom rdf:resource="http://www.atb-bremen.de/ontologies/generic-context-model/ContextResourceRole"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <skos:definition>Context Resource is a material artifact that describes any artifact (e.g. sensor or processing device) that is part of the observable situation or its ambient environment, and it could influence its nature or performance</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- http://www.atb-bremen.de/ontologies/generic-context-model/ContextResourceRole -->
+
+    <owl:Class rdf:about="http://www.atb-bremen.de/ontologies/generic-context-model/ContextResourceRole">
+        <rdfs:subClassOf rdf:resource="http://www.loa-cnr.it/ontologies/ExtendedDnS.owl#role"/>
+        <skos:definition>the role that a material artifact or an information object have in the context of a situation</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- http://www.atb-bremen.de/ontologies/generic-context-model/Degrees -->
+
+    <owl:Class rdf:about="http://www.atb-bremen.de/ontologies/generic-context-model/Degrees">
+        <rdfs:subClassOf rdf:resource="http://www.atb-bremen.de/ontologies/generic-context-model/TemperatureUnit"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.atb-bremen.de/ontologies/generic-context-model/DistanceSensor -->
+
+    <owl:Class rdf:about="http://www.atb-bremen.de/ontologies/generic-context-model/DistanceSensor">
+        <rdfs:subClassOf rdf:resource="http://www.atb-bremen.de/ontologies/generic-context-model/SensoricalDevice"/>
+        <owl:disjointWith rdf:resource="http://www.atb-bremen.de/ontologies/generic-context-model/PressureSensor"/>
+        <owl:disjointWith rdf:resource="http://www.atb-bremen.de/ontologies/generic-context-model/SpeedSensor"/>
+        <owl:disjointWith rdf:resource="http://www.atb-bremen.de/ontologies/generic-context-model/TemperatureSensor"/>
+        <owl:disjointWith rdf:resource="http://www.atb-bremen.de/ontologies/generic-context-model/TimeSensor"/>
+        <owl:disjointWith rdf:resource="http://www.atb-bremen.de/ontologies/generic-context-model/VolumeSensor"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.atb-bremen.de/ontologies/generic-context-model/DistanceUnit -->
+
+    <owl:Class rdf:about="http://www.atb-bremen.de/ontologies/generic-context-model/DistanceUnit">
+        <rdfs:subClassOf rdf:resource="http://www.atb-bremen.de/ontologies/generic-context-model/Unit"/>
+        <owl:disjointWith rdf:resource="http://www.atb-bremen.de/ontologies/generic-context-model/PressureSensor"/>
+        <owl:disjointWith rdf:resource="http://www.atb-bremen.de/ontologies/generic-context-model/PressureUnit"/>
+        <owl:disjointWith rdf:resource="http://www.atb-bremen.de/ontologies/generic-context-model/SpeedUnit"/>
+        <owl:disjointWith rdf:resource="http://www.atb-bremen.de/ontologies/generic-context-model/TemperatureUnit"/>
+        <owl:disjointWith rdf:resource="http://www.atb-bremen.de/ontologies/generic-context-model/TimeUnit"/>
+        <owl:disjointWith rdf:resource="http://www.atb-bremen.de/ontologies/generic-context-model/VolumeUnit"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.atb-bremen.de/ontologies/generic-context-model/Drill -->
+
+    <owl:Class rdf:about="http://www.atb-bremen.de/ontologies/generic-context-model/Drill">
+        <rdfs:subClassOf rdf:resource="http://www.atb-bremen.de/ontologies/generic-context-model/Activity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.atb-bremen.de/ontologies/generic-context-model/DroneActivity -->
+
+    <owl:Class rdf:about="http://www.atb-bremen.de/ontologies/generic-context-model/DroneActivity">
+        <rdfs:subClassOf rdf:resource="http://www.atb-bremen.de/ontologies/generic-context-model/Activity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.atb-bremen.de/ontologies/generic-context-model/ERP -->
+
+    <owl:Class rdf:about="http://www.atb-bremen.de/ontologies/generic-context-model/ERP">
+        <rdfs:subClassOf rdf:resource="http://www.atb-bremen.de/ontologies/generic-context-model/GenericSoftware"/>
+        <skos:definition>Enterprise Resource Planning Software is a Generic Software that manages, stores and processes the business data of a company.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- http://www.atb-bremen.de/ontologies/generic-context-model/EndUser -->
+
+    <owl:Class rdf:about="http://www.atb-bremen.de/ontologies/generic-context-model/EndUser">
+        <rdfs:subClassOf rdf:resource="http://www.atb-bremen.de/ontologies/generic-context-model/Actor"/>
+        <rdfs:label>End User</rdfs:label>
+        <skos:definition>End User is an Actor that uses the product or machine</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- http://www.atb-bremen.de/ontologies/generic-context-model/FactoryOperator -->
+
+    <owl:Class rdf:about="http://www.atb-bremen.de/ontologies/generic-context-model/FactoryOperator">
+        <rdfs:subClassOf rdf:resource="http://www.atb-bremen.de/ontologies/generic-context-model/Actor"/>
+        <rdfs:label>Factory Operator</rdfs:label>
+        <skos:definition>Factory Operator is an Industry Expert, reflecting to the employee of the respective industrial unit, which is responsible for operating the SW/HW systems.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- http://www.atb-bremen.de/ontologies/generic-context-model/Fahrenheit -->
+
+    <owl:Class rdf:about="http://www.atb-bremen.de/ontologies/generic-context-model/Fahrenheit">
+        <rdfs:subClassOf rdf:resource="http://www.atb-bremen.de/ontologies/generic-context-model/Degrees"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.atb-bremen.de/ontologies/generic-context-model/GenericDevice -->
+
+    <owl:Class rdf:about="http://www.atb-bremen.de/ontologies/generic-context-model/GenericDevice">
+        <rdfs:subClassOf rdf:resource="http://www.atb-bremen.de/ontologies/generic-context-model/ContextResource"/>
+        <owl:disjointWith rdf:resource="http://www.atb-bremen.de/ontologies/generic-context-model/Product"/>
+        <owl:disjointWith rdf:resource="http://www.atb-bremen.de/ontologies/generic-context-model/ProductionProcess"/>
+        <owl:disjointWith rdf:resource="http://www.atb-bremen.de/ontologies/generic-context-model/ResourceInformation"/>
+        <skos:definition>Generic Device is a ContextResource that is a hardware component within a product/machine, for data acquisition/processing/sharing and communication</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- http://www.atb-bremen.de/ontologies/generic-context-model/GenericSoftware -->
+
+    <owl:Class rdf:about="http://www.atb-bremen.de/ontologies/generic-context-model/GenericSoftware">
+        <rdfs:subClassOf rdf:resource="http://www.atb-bremen.de/ontologies/generic-context-model/ContextResource"/>
+        <skos:definition>Generic Software is a Resource that refers to the non-material aspects  necessary for the operation of the Generic Device. It includes also the control software (firmware) integrated on products or machines.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- http://www.atb-bremen.de/ontologies/generic-context-model/IndustryExpert -->
+
+    <owl:Class rdf:about="http://www.atb-bremen.de/ontologies/generic-context-model/IndustryExpert">
+        <rdfs:subClassOf rdf:resource="http://www.atb-bremen.de/ontologies/generic-context-model/Actor"/>
+        <rdfs:label>Industry Expert</rdfs:label>
+        <skos:definition>Industry Expert is an Actor that provides the business expertise to the solution or is involved in the operation of the factory (process/machine)</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- http://www.atb-bremen.de/ontologies/generic-context-model/Maintenance -->
+
+    <owl:Class rdf:about="http://www.atb-bremen.de/ontologies/generic-context-model/Maintenance">
+        <rdfs:subClassOf rdf:resource="http://www.atb-bremen.de/ontologies/generic-context-model/Activity"/>
+        <skos:definition>Maintenance is the Activity of preserving the operation of a system.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- http://www.atb-bremen.de/ontologies/generic-context-model/Meter -->
+
+    <owl:Class rdf:about="http://www.atb-bremen.de/ontologies/generic-context-model/Meter">
+        <rdfs:subClassOf rdf:resource="http://www.atb-bremen.de/ontologies/generic-context-model/DistanceUnit"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.atb-bremen.de/ontologies/generic-context-model/MeterPerSecond -->
+
+    <owl:Class rdf:about="http://www.atb-bremen.de/ontologies/generic-context-model/MeterPerSecond">
+        <rdfs:subClassOf rdf:resource="http://www.atb-bremen.de/ontologies/generic-context-model/SpeedUnit"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.atb-bremen.de/ontologies/generic-context-model/Milisecond -->
+
+    <owl:Class rdf:about="http://www.atb-bremen.de/ontologies/generic-context-model/Milisecond">
+        <rdfs:subClassOf rdf:resource="http://www.atb-bremen.de/ontologies/generic-context-model/TimeUnit"/>
+        <owl:disjointWith rdf:resource="http://www.atb-bremen.de/ontologies/generic-context-model/Second"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.atb-bremen.de/ontologies/generic-context-model/Millimeter -->
+
+    <owl:Class rdf:about="http://www.atb-bremen.de/ontologies/generic-context-model/Millimeter">
+        <rdfs:subClassOf rdf:resource="http://www.atb-bremen.de/ontologies/generic-context-model/DistanceUnit"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.atb-bremen.de/ontologies/generic-context-model/NetworkDevice -->
+
+    <owl:Class rdf:about="http://www.atb-bremen.de/ontologies/generic-context-model/NetworkDevice">
+        <rdfs:subClassOf rdf:resource="http://www.atb-bremen.de/ontologies/generic-context-model/GenericDevice"/>
+        <owl:disjointWith rdf:resource="http://www.atb-bremen.de/ontologies/generic-context-model/ProductionUnit"/>
+        <owl:disjointWith rdf:resource="http://www.atb-bremen.de/ontologies/generic-context-model/Pump"/>
+        <owl:disjointWith rdf:resource="http://www.atb-bremen.de/ontologies/generic-context-model/Valve"/>
+        <skos:definition>Network Device is a Generic Device which provides interconnection between other generic devices or gives access to remote resources.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- http://www.atb-bremen.de/ontologies/generic-context-model/Operator -->
+
+    <owl:Class rdf:about="http://www.atb-bremen.de/ontologies/generic-context-model/Operator">
+        <rdfs:subClassOf rdf:resource="http://www.atb-bremen.de/ontologies/generic-context-model/Actor"/>
+        <skos:definition>Actor is an entity that describes the humans involved in the situations observed by the  solution.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- http://www.atb-bremen.de/ontologies/generic-context-model/Optimisation -->
+
+    <owl:Class rdf:about="http://www.atb-bremen.de/ontologies/generic-context-model/Optimisation">
+        <rdfs:subClassOf rdf:resource="http://www.atb-bremen.de/ontologies/generic-context-model/Activity"/>
+        <skos:definition>Optimisation is an Activity of improving the operation of a system, by adjusting its (operation) parameters to more effective values.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- http://www.atb-bremen.de/ontologies/generic-context-model/Paint -->
+
+    <owl:Class rdf:about="http://www.atb-bremen.de/ontologies/generic-context-model/Paint">
+        <rdfs:subClassOf rdf:resource="http://www.atb-bremen.de/ontologies/generic-context-model/Activity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.atb-bremen.de/ontologies/generic-context-model/Prediction -->
+
+    <owl:Class rdf:about="http://www.atb-bremen.de/ontologies/generic-context-model/Prediction">
+        <rdfs:subClassOf rdf:resource="http://www.atb-bremen.de/ontologies/generic-context-model/Activity"/>
+        <skos:definition>Prediction is an Activity of foreseen attitudes in the operation of a system (machine, product or process) in order to (re)act accordingly in its future operation.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- http://www.atb-bremen.de/ontologies/generic-context-model/PressureSensor -->
+
+    <owl:Class rdf:about="http://www.atb-bremen.de/ontologies/generic-context-model/PressureSensor">
+        <rdfs:subClassOf rdf:resource="http://www.atb-bremen.de/ontologies/generic-context-model/SensoricalDevice"/>
+        <owl:disjointWith rdf:resource="http://www.atb-bremen.de/ontologies/generic-context-model/SpeedSensor"/>
+        <owl:disjointWith rdf:resource="http://www.atb-bremen.de/ontologies/generic-context-model/TemperatureSensor"/>
+        <owl:disjointWith rdf:resource="http://www.atb-bremen.de/ontologies/generic-context-model/TimeSensor"/>
+        <owl:disjointWith rdf:resource="http://www.atb-bremen.de/ontologies/generic-context-model/VolumeSensor"/>
+        <skos:definition>Pressure Sensor is a Sensorial Device that collects pressure information from the area of operation.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- http://www.atb-bremen.de/ontologies/generic-context-model/PressureUnit -->
+
+    <owl:Class rdf:about="http://www.atb-bremen.de/ontologies/generic-context-model/PressureUnit">
+        <rdfs:subClassOf rdf:resource="http://www.atb-bremen.de/ontologies/generic-context-model/Unit"/>
+        <owl:disjointWith rdf:resource="http://www.atb-bremen.de/ontologies/generic-context-model/SpeedUnit"/>
+        <owl:disjointWith rdf:resource="http://www.atb-bremen.de/ontologies/generic-context-model/TemperatureUnit"/>
+        <owl:disjointWith rdf:resource="http://www.atb-bremen.de/ontologies/generic-context-model/TimeUnit"/>
+        <owl:disjointWith rdf:resource="http://www.atb-bremen.de/ontologies/generic-context-model/VolumeUnit"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.atb-bremen.de/ontologies/generic-context-model/ProcessStep -->
+
+    <owl:Class rdf:about="http://www.atb-bremen.de/ontologies/generic-context-model/ProcessStep">
+        <rdfs:subClassOf rdf:resource="http://www.loa-cnr.it/ontologies/DOLCE-Lite.owl#process"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.loa-cnr.it/ontologies/DOLCE-Lite.owl#part-of"/>
+                <owl:someValuesFrom rdf:resource="http://www.atb-bremen.de/ontologies/generic-context-model/ProductionProcess"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.loa-cnr.it/ontologies/DOLCE-Lite.owl#part-of"/>
+                <owl:someValuesFrom rdf:resource="http://www.atb-bremen.de/ontologies/generic-context-model/WorkProcess"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <skos:definition>Subprocess is a process of limited duration or scope, or which includes less actions than a process. A process step can itself be a process.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- http://www.atb-bremen.de/ontologies/generic-context-model/ProcessingDevice -->
+
+    <owl:Class rdf:about="http://www.atb-bremen.de/ontologies/generic-context-model/ProcessingDevice">
+        <rdfs:subClassOf rdf:resource="http://www.atb-bremen.de/ontologies/generic-context-model/GenericDevice"/>
+        <owl:disjointWith rdf:resource="http://www.atb-bremen.de/ontologies/generic-context-model/SensoricalDevice"/>
+        <skos:definition>Processing Device is a Generic Device used to perform calculations for a process.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- http://www.atb-bremen.de/ontologies/generic-context-model/Product -->
+
+    <owl:Class rdf:about="http://www.atb-bremen.de/ontologies/generic-context-model/Product">
+        <rdfs:subClassOf rdf:resource="http://www.loa-cnr.it/ontologies/ExtendedDnS.owl#material-artifact"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.atb-bremen.de/ontologies/generic-context-model/has"/>
+                <owl:someValuesFrom rdf:resource="http://www.atb-bremen.de/ontologies/generic-context-model/ContextResource"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="http://www.atb-bremen.de/ontologies/generic-context-model/ProductionProcess"/>
+        <owl:disjointWith rdf:resource="http://www.atb-bremen.de/ontologies/generic-context-model/ResourceInformation"/>
+        <skos:definition>Product is a material artifact that describes the (material) good that is being manufactured as an outcome of a production process.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- http://www.atb-bremen.de/ontologies/generic-context-model/ProductPart -->
+
+    <owl:Class rdf:about="http://www.atb-bremen.de/ontologies/generic-context-model/ProductPart">
+        <rdfs:subClassOf rdf:resource="http://www.atb-bremen.de/ontologies/generic-context-model/Product"/>
+        <skos:definition>Product Part is a piece of a Product (main product), which can itself be a complete/independent product, and its existence affects the operation or functionality of the main product.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- http://www.atb-bremen.de/ontologies/generic-context-model/ProductionProcess -->
+
+    <owl:Class rdf:about="http://www.atb-bremen.de/ontologies/generic-context-model/ProductionProcess">
+        <rdfs:subClassOf rdf:resource="http://www.loa-cnr.it/ontologies/DOLCE-Lite.owl#process"/>
+        <owl:disjointWith rdf:resource="http://www.atb-bremen.de/ontologies/generic-context-model/ResourceInformation"/>
+        <skos:definition>Production Process is a series of actions to create a material artifact (product or product part).</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- http://www.atb-bremen.de/ontologies/generic-context-model/ProductionUnit -->
+
+    <owl:Class rdf:about="http://www.atb-bremen.de/ontologies/generic-context-model/ProductionUnit">
+        <rdfs:subClassOf rdf:resource="http://www.atb-bremen.de/ontologies/generic-context-model/ProcessingDevice"/>
+        <owl:disjointWith rdf:resource="http://www.atb-bremen.de/ontologies/generic-context-model/Pump"/>
+        <owl:disjointWith rdf:resource="http://www.atb-bremen.de/ontologies/generic-context-model/Valve"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.atb-bremen.de/ontologies/generic-context-model/Protocol -->
+
+    <owl:Class rdf:about="http://www.atb-bremen.de/ontologies/generic-context-model/Protocol">
+        <rdfs:subClassOf rdf:resource="http://www.atb-bremen.de/ontologies/generic-context-model/ResourceInformation"/>
+        <owl:disjointWith rdf:resource="http://www.atb-bremen.de/ontologies/generic-context-model/Timeslot"/>
+        <owl:disjointWith rdf:resource="http://www.atb-bremen.de/ontologies/generic-context-model/Unit"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.atb-bremen.de/ontologies/generic-context-model/Pump -->
+
+    <owl:Class rdf:about="http://www.atb-bremen.de/ontologies/generic-context-model/Pump">
+        <rdfs:subClassOf rdf:resource="http://www.atb-bremen.de/ontologies/generic-context-model/ProcessingDevice"/>
+        <owl:disjointWith rdf:resource="http://www.atb-bremen.de/ontologies/generic-context-model/Valve"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.atb-bremen.de/ontologies/generic-context-model/ResourceInformation -->
+
+    <owl:Class rdf:about="http://www.atb-bremen.de/ontologies/generic-context-model/ResourceInformation">
+        <rdfs:subClassOf rdf:resource="http://www.loa-cnr.it/ontologies/ExtendedDnS.owl#information-object"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.loa-cnr.it/ontologies/ExtendedDnS.owl#plays"/>
+                <owl:someValuesFrom rdf:resource="http://www.atb-bremen.de/ontologies/generic-context-model/ContextResourceRole"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.atb-bremen.de/ontologies/generic-context-model/Robot -->
+
+    <owl:Class rdf:about="http://www.atb-bremen.de/ontologies/generic-context-model/Robot">
+        <rdfs:subClassOf rdf:resource="http://www.atb-bremen.de/ontologies/generic-context-model/ProcessingDevice"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.atb-bremen.de/ontologies/generic-context-model/RobotActivity -->
+
+    <owl:Class rdf:about="http://www.atb-bremen.de/ontologies/generic-context-model/RobotActivity">
+        <rdfs:subClassOf rdf:resource="http://www.atb-bremen.de/ontologies/generic-context-model/Activity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.atb-bremen.de/ontologies/generic-context-model/Second -->
+
+    <owl:Class rdf:about="http://www.atb-bremen.de/ontologies/generic-context-model/Second">
+        <rdfs:subClassOf rdf:resource="http://www.atb-bremen.de/ontologies/generic-context-model/TimeUnit"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.atb-bremen.de/ontologies/generic-context-model/SensoricalDevice -->
+
+    <owl:Class rdf:about="http://www.atb-bremen.de/ontologies/generic-context-model/SensoricalDevice">
+        <rdfs:subClassOf rdf:resource="http://www.atb-bremen.de/ontologies/generic-context-model/GenericDevice"/>
+        <skos:definition>Sensorial Device is a Generic Device that allows for data collection from the environment of the observed situation, and acts as an interface between users, products, machines or processes, and their environment.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- http://www.atb-bremen.de/ontologies/generic-context-model/SpeedSensor -->
+
+    <owl:Class rdf:about="http://www.atb-bremen.de/ontologies/generic-context-model/SpeedSensor">
+        <rdfs:subClassOf rdf:resource="http://www.atb-bremen.de/ontologies/generic-context-model/SensoricalDevice"/>
+        <owl:disjointWith rdf:resource="http://www.atb-bremen.de/ontologies/generic-context-model/TemperatureSensor"/>
+        <owl:disjointWith rdf:resource="http://www.atb-bremen.de/ontologies/generic-context-model/TimeSensor"/>
+        <owl:disjointWith rdf:resource="http://www.atb-bremen.de/ontologies/generic-context-model/VolumeSensor"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.atb-bremen.de/ontologies/generic-context-model/SpeedUnit -->
+
+    <owl:Class rdf:about="http://www.atb-bremen.de/ontologies/generic-context-model/SpeedUnit">
+        <rdfs:subClassOf rdf:resource="http://www.atb-bremen.de/ontologies/generic-context-model/Unit"/>
+        <owl:disjointWith rdf:resource="http://www.atb-bremen.de/ontologies/generic-context-model/TemperatureUnit"/>
+        <owl:disjointWith rdf:resource="http://www.atb-bremen.de/ontologies/generic-context-model/TimeUnit"/>
+        <owl:disjointWith rdf:resource="http://www.atb-bremen.de/ontologies/generic-context-model/VolumeUnit"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.atb-bremen.de/ontologies/generic-context-model/TemperatureSensor -->
+
+    <owl:Class rdf:about="http://www.atb-bremen.de/ontologies/generic-context-model/TemperatureSensor">
+        <rdfs:subClassOf rdf:resource="http://www.atb-bremen.de/ontologies/generic-context-model/SensoricalDevice"/>
+        <owl:disjointWith rdf:resource="http://www.atb-bremen.de/ontologies/generic-context-model/TimeSensor"/>
+        <owl:disjointWith rdf:resource="http://www.atb-bremen.de/ontologies/generic-context-model/VolumeSensor"/>
+        <skos:definition>Temperature Sensor is a Sensorial Device that collects information related to the area of operation.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- http://www.atb-bremen.de/ontologies/generic-context-model/TemperatureUnit -->
+
+    <owl:Class rdf:about="http://www.atb-bremen.de/ontologies/generic-context-model/TemperatureUnit">
+        <rdfs:subClassOf rdf:resource="http://www.atb-bremen.de/ontologies/generic-context-model/Unit"/>
+        <owl:disjointWith rdf:resource="http://www.atb-bremen.de/ontologies/generic-context-model/TimeUnit"/>
+        <owl:disjointWith rdf:resource="http://www.atb-bremen.de/ontologies/generic-context-model/VolumeUnit"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.atb-bremen.de/ontologies/generic-context-model/TimeSensor -->
+
+    <owl:Class rdf:about="http://www.atb-bremen.de/ontologies/generic-context-model/TimeSensor">
+        <rdfs:subClassOf rdf:resource="http://www.atb-bremen.de/ontologies/generic-context-model/SensoricalDevice"/>
+        <owl:disjointWith rdf:resource="http://www.atb-bremen.de/ontologies/generic-context-model/VolumeSensor"/>
+        <skos:definition>Time Sensor is a Sensorial Device that collects time information from the area of operation.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- http://www.atb-bremen.de/ontologies/generic-context-model/TimeUnit -->
+
+    <owl:Class rdf:about="http://www.atb-bremen.de/ontologies/generic-context-model/TimeUnit">
+        <rdfs:subClassOf rdf:resource="http://www.atb-bremen.de/ontologies/generic-context-model/Unit"/>
+        <owl:disjointWith rdf:resource="http://www.atb-bremen.de/ontologies/generic-context-model/VolumeUnit"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.atb-bremen.de/ontologies/generic-context-model/Timeslot -->
+
+    <owl:Class rdf:about="http://www.atb-bremen.de/ontologies/generic-context-model/Timeslot">
+        <rdfs:subClassOf rdf:resource="http://www.atb-bremen.de/ontologies/generic-context-model/ResourceInformation"/>
+        <owl:disjointWith rdf:resource="http://www.atb-bremen.de/ontologies/generic-context-model/Unit"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.atb-bremen.de/ontologies/generic-context-model/Unit -->
+
+    <owl:Class rdf:about="http://www.atb-bremen.de/ontologies/generic-context-model/Unit">
+        <rdfs:subClassOf rdf:resource="http://www.loa-cnr.it/ontologies/ExtendedDnS.owl#information-encoding-system"/>
+        <skos:definition>the units that are used to represent several phisical quantities</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- http://www.atb-bremen.de/ontologies/generic-context-model/Valve -->
+
+    <owl:Class rdf:about="http://www.atb-bremen.de/ontologies/generic-context-model/Valve">
+        <rdfs:subClassOf rdf:resource="http://www.atb-bremen.de/ontologies/generic-context-model/ProcessingDevice"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.atb-bremen.de/ontologies/generic-context-model/VolumeSensor -->
+
+    <owl:Class rdf:about="http://www.atb-bremen.de/ontologies/generic-context-model/VolumeSensor">
+        <rdfs:subClassOf rdf:resource="http://www.atb-bremen.de/ontologies/generic-context-model/SensoricalDevice"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.atb-bremen.de/ontologies/generic-context-model/VolumeUnit -->
+
+    <owl:Class rdf:about="http://www.atb-bremen.de/ontologies/generic-context-model/VolumeUnit">
+        <rdfs:subClassOf rdf:resource="http://www.atb-bremen.de/ontologies/generic-context-model/Unit"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.atb-bremen.de/ontologies/generic-context-model/WorkProcess -->
+
+    <owl:Class rdf:about="http://www.atb-bremen.de/ontologies/generic-context-model/WorkProcess">
+        <rdfs:subClassOf rdf:resource="http://www.loa-cnr.it/ontologies/DOLCE-Lite.owl#process"/>
+        <skos:definition>Work Process is a series of actions to achieve a goal</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- http://www.loa-cnr.it/ontologies/ExtendedDnS.owl#action -->
+
+    <owl:Class rdf:about="http://www.loa-cnr.it/ontologies/ExtendedDnS.owl#action"/>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi -->
+

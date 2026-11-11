@@ -1,0 +1,861 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.loa-cnr.it/ontologies/InformationObjects.owl#"
+     xml:base="http://www.loa-cnr.it/ontologies/InformationObjects.owl"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:dol="http://www.loa-cnr.it/ontologies/DOLCE-Lite.owl#"
+     xmlns:inf="http://www.loa-cnr.it/ontologies/InformationObjects.owl#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:sem="http://www.loa-cnr.it/ontologies/SemioticCommunicationTheory.owl#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:daml="http://www.daml.org/2001/03/daml+oil#"
+     xmlns:edns="http://www.loa-cnr.it/ontologies/ExtendedDnS.owl#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://www.loa-cnr.it/ontologies/InformationObjects.owl">
+        <owl:imports rdf:resource="http://www.loa-cnr.it/ontologies/ExtendedDnS.owl"/>
+        <rdfs:comment>A minimal ontology of information objects and communication theory, plugin to DnS. OWL engineering by Aldo Gangemi.</rdfs:comment>
+        <rdfs:comment>Imports: Extended DnS</rdfs:comment>
+        <owl:versionInfo>397
+    </owl:versionInfo>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.loa-cnr.it/ontologies/ExtendedDnS.owl#defined-by -->
+
+    <owl:AnnotationProperty rdf:about="http://www.loa-cnr.it/ontologies/ExtendedDnS.owl#defined-by"/>
+    
+
+
+    <!-- http://www.loa-cnr.it/ontologies/ExtendedDnS.owl#defines -->
+
+    <owl:AnnotationProperty rdf:about="http://www.loa-cnr.it/ontologies/ExtendedDnS.owl#defines"/>
+    
+
+
+    <!-- http://www.loa-cnr.it/ontologies/ExtendedDnS.owl#specializes -->
+
+    <owl:AnnotationProperty rdf:about="http://www.loa-cnr.it/ontologies/ExtendedDnS.owl#specializes"/>
+    
+
+
+    <!-- http://www.w3.org/2002/07/owl#minCardinality -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2002/07/owl#minCardinality"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.loa-cnr.it/ontologies/InformationObjects.owl#broader-than -->
+
+    <owl:ObjectProperty rdf:about="http://www.loa-cnr.it/ontologies/InformationObjects.owl#broader-than">
+        <rdfs:subPropertyOf rdf:resource="http://www.loa-cnr.it/ontologies/DOLCE-Lite.owl#proper-part"/>
+        <owl:inverseOf rdf:resource="http://www.loa-cnr.it/ontologies/InformationObjects.owl#narrower-than"/>
+        <rdfs:domain rdf:resource="http://www.loa-cnr.it/ontologies/InformationObjects.owl#subject"/>
+        <rdfs:range rdf:resource="http://www.loa-cnr.it/ontologies/InformationObjects.owl#subject"/>
+        <rdfs:comment>The proper part relation between subjects.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.loa-cnr.it/ontologies/InformationObjects.owl#identified-by -->
+
+    <owl:ObjectProperty rdf:about="http://www.loa-cnr.it/ontologies/InformationObjects.owl#identified-by">
+        <rdfs:subPropertyOf rdf:resource="http://www.loa-cnr.it/ontologies/ExtendedDnS.owl#aboutness-of"/>
+        <owl:inverseOf rdf:resource="http://www.loa-cnr.it/ontologies/InformationObjects.owl#identifies"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.loa-cnr.it/ontologies/InformationObjects.owl#identifies -->
+
+    <owl:ObjectProperty rdf:about="http://www.loa-cnr.it/ontologies/InformationObjects.owl#identifies">
+        <rdfs:subPropertyOf rdf:resource="http://www.loa-cnr.it/ontologies/ExtendedDnS.owl#about"/>
+        <rdfs:comment>Being about an antity with the main purpose of conventionally naming that entity. Typically, proper nouns identify entities.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.loa-cnr.it/ontologies/InformationObjects.owl#narrower-than -->
+
+    <owl:ObjectProperty rdf:about="http://www.loa-cnr.it/ontologies/InformationObjects.owl#narrower-than">
+        <rdfs:subPropertyOf rdf:resource="http://www.loa-cnr.it/ontologies/DOLCE-Lite.owl#immediate-relation-i"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.loa-cnr.it/ontologies/DOLCE-Lite.owl#part-of"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.loa-cnr.it/ontologies/DOLCE-Lite.owl#proper-part-of"/>
+        <rdfs:domain rdf:resource="http://www.loa-cnr.it/ontologies/InformationObjects.owl#subject"/>
+        <rdfs:range rdf:resource="http://www.loa-cnr.it/ontologies/InformationObjects.owl#subject"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.loa-cnr.it/ontologies/InformationObjects.owl#prototype -->
+
+    <owl:ObjectProperty rdf:about="http://www.loa-cnr.it/ontologies/InformationObjects.owl#prototype">
+        <rdfs:subPropertyOf rdf:resource="http://www.loa-cnr.it/ontologies/DOLCE-Lite.owl#immediate-relation"/>
+        <owl:inverseOf rdf:resource="http://www.loa-cnr.it/ontologies/InformationObjects.owl#prototype-for"/>
+        <rdfs:domain rdf:resource="http://www.loa-cnr.it/ontologies/DOLCE-Lite.owl#particular"/>
+        <rdfs:range rdf:resource="http://www.loa-cnr.it/ontologies/DOLCE-Lite.owl#particular"/>
+        <rdfs:comment>The relation between an entity (playing the role of example, sample, prototype, master, etc.), and another that has all the properties of the first (or a given set of them), except space-time.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.loa-cnr.it/ontologies/InformationObjects.owl#prototype-for -->
+
+    <owl:ObjectProperty rdf:about="http://www.loa-cnr.it/ontologies/InformationObjects.owl#prototype-for">
+        <rdfs:subPropertyOf rdf:resource="http://www.loa-cnr.it/ontologies/DOLCE-Lite.owl#immediate-relation-i"/>
+        <rdfs:domain rdf:resource="http://www.loa-cnr.it/ontologies/DOLCE-Lite.owl#particular"/>
+        <rdfs:range rdf:resource="http://www.loa-cnr.it/ontologies/DOLCE-Lite.owl#particular"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.loa-cnr.it/ontologies/InformationObjects.owl#q-represented-by -->
+
+    <owl:ObjectProperty rdf:about="http://www.loa-cnr.it/ontologies/InformationObjects.owl#q-represented-by">
+        <rdfs:subPropertyOf rdf:resource="http://www.loa-cnr.it/ontologies/DOLCE-Lite.owl#mediated-relation-i"/>
+        <owl:inverseOf rdf:resource="http://www.loa-cnr.it/ontologies/InformationObjects.owl#q-represents"/>
+        <rdfs:domain rdf:resource="http://www.loa-cnr.it/ontologies/DOLCE-Lite.owl#region"/>
+        <rdfs:range rdf:resource="http://www.loa-cnr.it/ontologies/ExtendedDnS.owl#information-object"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.loa-cnr.it/ontologies/InformationObjects.owl#q-represents -->
+
+    <owl:ObjectProperty rdf:about="http://www.loa-cnr.it/ontologies/InformationObjects.owl#q-represents">
+        <rdfs:subPropertyOf rdf:resource="http://www.loa-cnr.it/ontologies/DOLCE-Lite.owl#mediated-relation"/>
+        <rdfs:domain rdf:resource="http://www.loa-cnr.it/ontologies/ExtendedDnS.owl#information-object"/>
+        <rdfs:range rdf:resource="http://www.loa-cnr.it/ontologies/DOLCE-Lite.owl#region"/>
+        <rdfs:comment>This relation supports the representation of conceptual regions by information objects. It is defined as a composed relation: an information object is expressed according to an information encoding description that maps a quality space. In other words, this means that a representation of conceptual regions within quality spaces requires an explicit conceptualization of the dimensions operating in the quality space. In still other words, a quality space can be mapped to a theory, which can be reified as a special kind of &apos;information encoding description&apos;.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.loa-cnr.it/ontologies/InformationObjects.owl#referred-by -->
+
+    <owl:ObjectProperty rdf:about="http://www.loa-cnr.it/ontologies/InformationObjects.owl#referred-by">
+        <rdfs:subPropertyOf rdf:resource="http://www.loa-cnr.it/ontologies/DOLCE-Lite.owl#mediated-relation-i"/>
+        <owl:inverseOf rdf:resource="http://www.loa-cnr.it/ontologies/InformationObjects.owl#refers-to"/>
+        <rdfs:domain rdf:resource="http://www.loa-cnr.it/ontologies/DOLCE-Lite.owl#particular"/>
+        <rdfs:range rdf:resource="http://www.loa-cnr.it/ontologies/ExtendedDnS.owl#agent"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.loa-cnr.it/ontologies/InformationObjects.owl#refers-to -->
+
+    <owl:ObjectProperty rdf:about="http://www.loa-cnr.it/ontologies/InformationObjects.owl#refers-to">
+        <rdfs:subPropertyOf rdf:resource="http://www.loa-cnr.it/ontologies/DOLCE-Lite.owl#mediated-relation"/>
+        <rdfs:domain rdf:resource="http://www.loa-cnr.it/ontologies/ExtendedDnS.owl#agent"/>
+        <rdfs:range rdf:resource="http://www.loa-cnr.it/ontologies/DOLCE-Lite.owl#particular"/>
+        <rdfs:comment>Referring to something is assumed here under a &apos;negotiated reference&apos; approach, i.e. agents refer to entities by conceiving a description appropriate to context.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.loa-cnr.it/ontologies/InformationObjects.owl#title -->
+
+    <owl:DatatypeProperty rdf:about="http://www.loa-cnr.it/ontologies/InformationObjects.owl#title">
+        <rdfs:domain rdf:resource="http://www.loa-cnr.it/ontologies/ExtendedDnS.owl#information-object"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.loa-cnr.it/ontologies/DOLCE-Lite.owl#physical-endurant -->
+
+    <owl:Class rdf:about="http://www.loa-cnr.it/ontologies/DOLCE-Lite.owl#physical-endurant"/>
+    
+
+
+    <!-- http://www.loa-cnr.it/ontologies/ExtendedDnS.owl#agent -->
+
+    <owl:Class rdf:about="http://www.loa-cnr.it/ontologies/ExtendedDnS.owl#agent"/>
+    
+
+
+    <!-- http://www.loa-cnr.it/ontologies/ExtendedDnS.owl#agent-driven-role -->
+
+    <owl:Class rdf:about="http://www.loa-cnr.it/ontologies/ExtendedDnS.owl#agent-driven-role"/>
+    
+
+
+    <!-- http://www.loa-cnr.it/ontologies/ExtendedDnS.owl#description-role -->
+
+    <owl:Class rdf:about="http://www.loa-cnr.it/ontologies/ExtendedDnS.owl#description-role"/>
+    
+
+
+    <!-- http://www.loa-cnr.it/ontologies/ExtendedDnS.owl#information-encoding-system -->
+
+    <owl:Class rdf:about="http://www.loa-cnr.it/ontologies/ExtendedDnS.owl#information-encoding-system"/>
+    
+
+
+    <!-- http://www.loa-cnr.it/ontologies/ExtendedDnS.owl#information-object -->
+
+    <owl:Class rdf:about="http://www.loa-cnr.it/ontologies/ExtendedDnS.owl#information-object"/>
+    
+
+
+    <!-- http://www.loa-cnr.it/ontologies/ExtendedDnS.owl#physical-realization -->
+
+    <owl:Class rdf:about="http://www.loa-cnr.it/ontologies/ExtendedDnS.owl#physical-realization"/>
+    
+
+
+    <!-- http://www.loa-cnr.it/ontologies/ExtendedDnS.owl#situation -->
+
+    <owl:Class rdf:about="http://www.loa-cnr.it/ontologies/ExtendedDnS.owl#situation"/>
+    
+
+
+    <!-- http://www.loa-cnr.it/ontologies/InformationObjects.owl#classification-system -->
+
+    <owl:Class rdf:about="http://www.loa-cnr.it/ontologies/InformationObjects.owl#classification-system">
+        <rdfs:subClassOf rdf:resource="http://www.loa-cnr.it/ontologies/ExtendedDnS.owl#information-encoding-system"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.loa-cnr.it/ontologies/ExtendedDnS.owl#involves"/>
+                <owl:someValuesFrom rdf:resource="http://www.loa-cnr.it/ontologies/ExtendedDnS.owl#information-object"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>An information encoding system that provides rules for (ev. ordered) lists of information objects, e.g terminologies, subjects, knowledge domains.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.loa-cnr.it/ontologies/InformationObjects.owl#combinatorial-system -->
+
+    <owl:Class rdf:about="http://www.loa-cnr.it/ontologies/InformationObjects.owl#combinatorial-system">
+        <rdfs:subClassOf rdf:resource="http://www.loa-cnr.it/ontologies/ExtendedDnS.owl#information-encoding-system"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.loa-cnr.it/ontologies/ExtendedDnS.owl#orders"/>
+                <owl:allValuesFrom rdf:resource="http://www.loa-cnr.it/ontologies/ExtendedDnS.owl#information-object"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>An information encoding system that provides roles and operations to create valid information objects (e.g. grammars, templates, codes).</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.loa-cnr.it/ontologies/InformationObjects.owl#diagrammatic-object -->
+
+    <owl:Class rdf:about="http://www.loa-cnr.it/ontologies/InformationObjects.owl#diagrammatic-object">
+        <rdfs:subClassOf rdf:resource="http://www.loa-cnr.it/ontologies/ExtendedDnS.owl#information-object"/>
+        <rdfs:comment>An information object ordered by a shematic iconic code</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.loa-cnr.it/ontologies/InformationObjects.owl#formal-expression -->
+
+    <owl:Class rdf:about="http://www.loa-cnr.it/ontologies/InformationObjects.owl#formal-expression">
+        <rdfs:subClassOf rdf:resource="http://www.loa-cnr.it/ontologies/ExtendedDnS.owl#information-object"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.loa-cnr.it/ontologies/ExtendedDnS.owl#ordered-by"/>
+                <owl:someValuesFrom rdf:resource="http://www.loa-cnr.it/ontologies/InformationObjects.owl#formal-system"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.loa-cnr.it/ontologies/InformationObjects.owl#formal-system -->
+
+    <owl:Class rdf:about="http://www.loa-cnr.it/ontologies/InformationObjects.owl#formal-system">
+        <rdfs:subClassOf rdf:resource="http://www.loa-cnr.it/ontologies/ExtendedDnS.owl#information-encoding-system"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.loa-cnr.it/ontologies/ExtendedDnS.owl#orders"/>
+                <owl:allValuesFrom rdf:resource="http://www.loa-cnr.it/ontologies/InformationObjects.owl#formal-expression"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>A code that orders the generation of information objects according to formally defined vocabulary, axioms, rules, etc.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.loa-cnr.it/ontologies/InformationObjects.owl#gesturing -->
+
+    <owl:Class rdf:about="http://www.loa-cnr.it/ontologies/InformationObjects.owl#gesturing">
+        <rdfs:subClassOf rdf:resource="http://www.loa-cnr.it/ontologies/ExtendedDnS.owl#action"/>
+        <rdfs:subClassOf rdf:resource="http://www.loa-cnr.it/ontologies/InformationObjects.owl#information-realization"/>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.loa-cnr.it/ontologies/ExtendedDnS.owl#action"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.loa-cnr.it/ontologies/DOLCE-Lite.owl#participant"/>
+                        <owl:someValuesFrom rdf:resource="http://www.loa-cnr.it/ontologies/ExtendedDnS.owl#agentive-physical-object"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.loa-cnr.it/ontologies/ExtendedDnS.owl#setting"/>
+                <owl:someValuesFrom rdf:resource="http://www.loa-cnr.it/ontologies/SemioticCommunicationTheory.owl#communication-situation"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>An information realization based on conventional body movements. It is a primary code of communication (primary means that it is an original bodily expression, specially if firstly learnt).</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.loa-cnr.it/ontologies/InformationObjects.owl#grammar -->
+
+    <owl:Class rdf:about="http://www.loa-cnr.it/ontologies/InformationObjects.owl#grammar">
+        <rdfs:subClassOf rdf:resource="http://www.loa-cnr.it/ontologies/InformationObjects.owl#combinatorial-system"/>
+        <rdfs:comment>A set of rules for the generation of a (closed or open set of) information objects.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.loa-cnr.it/ontologies/InformationObjects.owl#grapheme -->
+
+    <owl:Class rdf:about="http://www.loa-cnr.it/ontologies/InformationObjects.owl#grapheme">
+        <rdfs:subClassOf rdf:resource="http://www.loa-cnr.it/ontologies/InformationObjects.owl#linguistic-object"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.loa-cnr.it/ontologies/DOLCE-Lite.owl#part-of"/>
+                <owl:someValuesFrom rdf:resource="http://www.loa-cnr.it/ontologies/InformationObjects.owl#word"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.loa-cnr.it/ontologies/ExtendedDnS.owl#realized-by"/>
+                <owl:allValuesFrom rdf:resource="http://www.loa-cnr.it/ontologies/InformationObjects.owl#writing"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>A part of a word as it can be realized by writing.
+A spoken information realization can be &apos;about&apos; a grapheme (as in reading), but it does not &apos;realize&apos; it. BTW, since spoken realizations are a &apos;primary&apos; code of communication, the difference between direct and indirect spoken realizations (reading) is often ontologically understated.
+A grapheme is not necessarily able to express a meaning (description), although it can in principle (e.g. &apos;a&apos; in English).</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.loa-cnr.it/ontologies/InformationObjects.owl#iconic-object -->
+
+    <owl:Class rdf:about="http://www.loa-cnr.it/ontologies/InformationObjects.owl#iconic-object">
+        <rdfs:subClassOf rdf:resource="http://www.loa-cnr.it/ontologies/ExtendedDnS.owl#information-object"/>
+        <rdfs:comment>An information object ordered by a visual code.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.loa-cnr.it/ontologies/InformationObjects.owl#information-realization -->
+
+    <owl:Class rdf:about="http://www.loa-cnr.it/ontologies/InformationObjects.owl#information-realization">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.loa-cnr.it/ontologies/ExtendedDnS.owl#physical-realization"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.loa-cnr.it/ontologies/ExtendedDnS.owl#realizes"/>
+                        <owl:someValuesFrom rdf:resource="http://www.loa-cnr.it/ontologies/ExtendedDnS.owl#information-object"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:comment>Any physical entity that realizes an information object.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.loa-cnr.it/ontologies/InformationObjects.owl#linguistic-object -->
+
+    <owl:Class rdf:about="http://www.loa-cnr.it/ontologies/InformationObjects.owl#linguistic-object">
+        <rdfs:subClassOf rdf:resource="http://www.loa-cnr.it/ontologies/ExtendedDnS.owl#information-object"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.loa-cnr.it/ontologies/ExtendedDnS.owl#ordered-by"/>
+                <owl:someValuesFrom rdf:resource="http://www.loa-cnr.it/ontologies/SemioticCommunicationTheory.owl#language"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>An information object ordered by (encoded according to) a language.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.loa-cnr.it/ontologies/InformationObjects.owl#narrative -->
+
+    <owl:Class rdf:about="http://www.loa-cnr.it/ontologies/InformationObjects.owl#narrative">
+        <rdfs:subClassOf rdf:resource="http://www.loa-cnr.it/ontologies/ExtendedDnS.owl#description"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.loa-cnr.it/ontologies/ExtendedDnS.owl#expressed-by"/>
+                <owl:someValuesFrom rdf:resource="http://www.loa-cnr.it/ontologies/InformationObjects.owl#text"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>A description expressed by a text, and ordered by additional semiotic codes (narratological structures).</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.loa-cnr.it/ontologies/InformationObjects.owl#phoneme -->
+
+    <owl:Class rdf:about="http://www.loa-cnr.it/ontologies/InformationObjects.owl#phoneme">
+        <rdfs:subClassOf rdf:resource="http://www.loa-cnr.it/ontologies/InformationObjects.owl#linguistic-object"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.loa-cnr.it/ontologies/DOLCE-Lite.owl#part-of"/>
+                <owl:someValuesFrom rdf:resource="http://www.loa-cnr.it/ontologies/InformationObjects.owl#word"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.loa-cnr.it/ontologies/ExtendedDnS.owl#realized-by"/>
+                <owl:allValuesFrom rdf:resource="http://www.loa-cnr.it/ontologies/InformationObjects.owl#voicing"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>A part of a word as it can be realized by voicing.
+A written information realization can be &apos;about&apos; a phoneme (as in the case of transcription systems), but it does not &apos;realize&apos; it.
+A phoneme is not necessarily able to express a meaning (description), although it can in principle (e.g. &apos;a&apos; in English).</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.loa-cnr.it/ontologies/InformationObjects.owl#subject -->
+
+    <owl:Class rdf:about="http://www.loa-cnr.it/ontologies/InformationObjects.owl#subject">
+        <rdfs:subClassOf rdf:resource="http://www.loa-cnr.it/ontologies/ExtendedDnS.owl#description"/>
+        <rdfs:comment>A domain of knowledge, typically expressed by one term, related to other subjects in a partial order hierarchy and with some topological properties; e.g. biology, sport, politics.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.loa-cnr.it/ontologies/InformationObjects.owl#text -->
+
+    <owl:Class rdf:about="http://www.loa-cnr.it/ontologies/InformationObjects.owl#text">
+        <rdfs:subClassOf rdf:resource="http://www.loa-cnr.it/ontologies/InformationObjects.owl#linguistic-object"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.loa-cnr.it/ontologies/ExtendedDnS.owl#ordered-by"/>
+                <owl:someValuesFrom rdf:resource="http://www.loa-cnr.it/ontologies/SemioticCommunicationTheory.owl#language"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>A complex linguistic object, expressed according to a language and still independent from a particular physical realization.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.loa-cnr.it/ontologies/InformationObjects.owl#voicing -->
+
+    <owl:Class rdf:about="http://www.loa-cnr.it/ontologies/InformationObjects.owl#voicing">
+        <rdfs:subClassOf rdf:resource="http://www.loa-cnr.it/ontologies/ExtendedDnS.owl#action"/>
+        <rdfs:subClassOf rdf:resource="http://www.loa-cnr.it/ontologies/InformationObjects.owl#information-realization"/>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.loa-cnr.it/ontologies/ExtendedDnS.owl#action"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.loa-cnr.it/ontologies/DOLCE-Lite.owl#participant"/>
+                        <owl:someValuesFrom rdf:resource="http://www.loa-cnr.it/ontologies/ExtendedDnS.owl#agentive-physical-object"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.loa-cnr.it/ontologies/ExtendedDnS.owl#realizes"/>
+                <owl:someValuesFrom rdf:resource="http://www.loa-cnr.it/ontologies/InformationObjects.owl#linguistic-object"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.loa-cnr.it/ontologies/ExtendedDnS.owl#setting"/>
+                <owl:someValuesFrom rdf:resource="http://www.loa-cnr.it/ontologies/SemioticCommunicationTheory.owl#communication-situation"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>An information realization based on conventional sounds. It is a primary code of communication (primary means that it is an original bodily expression, specially if firstly learnt).</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.loa-cnr.it/ontologies/InformationObjects.owl#word -->
+
+    <owl:Class rdf:about="http://www.loa-cnr.it/ontologies/InformationObjects.owl#word">
+        <rdfs:subClassOf rdf:resource="http://www.loa-cnr.it/ontologies/InformationObjects.owl#linguistic-object"/>
+        <rdfs:comment>A linguistic object consisting of a string (independently of its physical realization). Its topological unity can change according to its physical realization: as a written realization, its boundaries are blank spaces, as a spoken realization, sometimes is silence, sometimes not, and higher order features intervene.
+Grammatical entities such as nouns, verbs, adjectives, etc. are roles defined by a grammar, and words (or larger linguistic objects) can play those roles in a given language. E.g., the word &apos;share&apos; can play both &apos;verb&apos; and &apos;noun&apos; roles in contemporary English, while the word &apos;come&apos; can only play the &apos;verb&apos; role in English, and the &apos;adverb&apos; or &apos;conjunction&apos; roles in Italian (but if we consider a word as only realized by phonemes, i.e. if we consider the oral realizations of &apos;come&apos;, there is no common word in the two languages).</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.loa-cnr.it/ontologies/InformationObjects.owl#writing -->
+
+    <owl:Class rdf:about="http://www.loa-cnr.it/ontologies/InformationObjects.owl#writing">
+        <rdfs:subClassOf rdf:resource="http://www.loa-cnr.it/ontologies/InformationObjects.owl#information-realization"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.loa-cnr.it/ontologies/ExtendedDnS.owl#realizes"/>
+                <owl:someValuesFrom rdf:resource="http://www.loa-cnr.it/ontologies/InformationObjects.owl#linguistic-object"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>An information realization based on conventional symbols.
+It is a secondary code of communication (secondary means that it is about an original bodily expression, i.e. a primary code). Therefore, we are not considering here early forms of iconic expression, which could be considered primary.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.loa-cnr.it/ontologies/SemioticCommunicationTheory.owl#communication-role -->
+
+    <owl:Class rdf:about="http://www.loa-cnr.it/ontologies/SemioticCommunicationTheory.owl#communication-role">
+        <rdfs:subClassOf rdf:resource="http://www.loa-cnr.it/ontologies/ExtendedDnS.owl#role"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.loa-cnr.it/ontologies/ExtendedDnS.owl#d-used-by"/>
+                <owl:someValuesFrom>
+                    <owl:Class>
+                        <owl:oneOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://www.loa-cnr.it/ontologies/SemioticCommunicationTheory.owl#s-communication-theory"/>
+                        </owl:oneOf>
+                    </owl:Class>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>The roles employed to characterize communication. E.g. the roles from Jakobson&apos;s theory of communication.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.loa-cnr.it/ontologies/SemioticCommunicationTheory.owl#communication-situation -->
+
+    <owl:Class rdf:about="http://www.loa-cnr.it/ontologies/SemioticCommunicationTheory.owl#communication-situation">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.loa-cnr.it/ontologies/ExtendedDnS.owl#situation"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.loa-cnr.it/ontologies/ExtendedDnS.owl#satisfies"/>
+                        <owl:someValuesFrom>
+                            <owl:Class>
+                                <owl:oneOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="http://www.loa-cnr.it/ontologies/SemioticCommunicationTheory.owl#s-communication-theory"/>
+                                </owl:oneOf>
+                            </owl:Class>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:comment>Any situation that satisfies Jakobson&apos;s communication theory.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.loa-cnr.it/ontologies/SemioticCommunicationTheory.owl#interpretation-situation -->
+
+    <owl:Class rdf:about="http://www.loa-cnr.it/ontologies/SemioticCommunicationTheory.owl#interpretation-situation">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.loa-cnr.it/ontologies/ExtendedDnS.owl#situation"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.loa-cnr.it/ontologies/ExtendedDnS.owl#satisfies"/>
+                        <owl:someValuesFrom>
+                            <owl:Class>
+                                <owl:oneOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="http://www.loa-cnr.it/ontologies/SemioticCommunicationTheory.owl#semiotic-interpretation-function"/>
+                                </owl:oneOf>
+                            </owl:Class>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:comment>The class of situations that satisfy the semiotic interpretation function (given an expression and a context, a meaning is provided).</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.loa-cnr.it/ontologies/SemioticCommunicationTheory.owl#language -->
+
+    <owl:Class rdf:about="http://www.loa-cnr.it/ontologies/SemioticCommunicationTheory.owl#language">
+        <rdfs:subClassOf rdf:resource="http://www.loa-cnr.it/ontologies/SemioticCommunicationTheory.owl#semiotic-code"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.loa-cnr.it/ontologies/SemioticCommunicationTheory.owl#semiotic-code -->
+
+    <owl:Class rdf:about="http://www.loa-cnr.it/ontologies/SemioticCommunicationTheory.owl#semiotic-code">
+        <rdfs:subClassOf rdf:resource="http://www.loa-cnr.it/ontologies/InformationObjects.owl#combinatorial-system"/>
+        <rdfs:comment>A combinatorial code intended to ordering of information objects involved in the semiotic &apos;interpretation function&apos;.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.loa-cnr.it/ontologies/SemioticCommunicationTheory.owl#semiotic-role -->
+
+    <owl:Class rdf:about="http://www.loa-cnr.it/ontologies/SemioticCommunicationTheory.owl#semiotic-role">
+        <rdfs:subClassOf rdf:resource="http://www.loa-cnr.it/ontologies/ExtendedDnS.owl#role"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.loa-cnr.it/ontologies/ExtendedDnS.owl#specialized-by"/>
+                <owl:someValuesFrom rdf:resource="http://www.loa-cnr.it/ontologies/SemioticCommunicationTheory.owl#communication-role"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>A semiotic role is a non-agentive role defined by the interpretation function.It should be specialized within a communication setting by a role that is played by some entity in a communication situation. Semiotic roles are used to fill the universe of the so-called &apos;interpretation function&apos;.Two of them are specialized by two communication roles (message and context).</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.loa-cnr.it/ontologies/SemioticCommunicationTheory.owl#c-context -->
+
+    <owl:NamedIndividual rdf:about="http://www.loa-cnr.it/ontologies/SemioticCommunicationTheory.owl#c-context">
+        <rdf:type rdf:resource="http://www.loa-cnr.it/ontologies/ExtendedDnS.owl#description-role"/>
+        <rdf:type rdf:resource="http://www.loa-cnr.it/ontologies/SemioticCommunicationTheory.owl#communication-role"/>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.loa-cnr.it/ontologies/ExtendedDnS.owl#played-by"/>
+                <owl:allValuesFrom rdf:resource="http://www.loa-cnr.it/ontologies/ExtendedDnS.owl#description"/>
+            </owl:Restriction>
+        </rdf:type>
+        <edns:defined-by rdf:resource="http://www.loa-cnr.it/ontologies/SemioticCommunicationTheory.owl#s-communication-theory"/>
+        <rdfs:comment>The context role in Jakobson&apos;s theory of communication.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.loa-cnr.it/ontologies/SemioticCommunicationTheory.owl#channel-role -->
+
+    <owl:NamedIndividual rdf:about="http://www.loa-cnr.it/ontologies/SemioticCommunicationTheory.owl#channel-role">
+        <rdf:type rdf:resource="http://www.loa-cnr.it/ontologies/SemioticCommunicationTheory.owl#communication-role"/>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.loa-cnr.it/ontologies/ExtendedDnS.owl#played-by"/>
+                <owl:allValuesFrom rdf:resource="http://www.loa-cnr.it/ontologies/DOLCE-Lite.owl#physical-endurant"/>
+            </owl:Restriction>
+        </rdf:type>
+        <edns:defined-by rdf:resource="http://www.loa-cnr.it/ontologies/SemioticCommunicationTheory.owl#s-communication-theory"/>
+        <rdfs:comment>The channel role in Jakobson&apos;s theory of communication.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.loa-cnr.it/ontologies/SemioticCommunicationTheory.owl#code-role -->
+
+    <owl:NamedIndividual rdf:about="http://www.loa-cnr.it/ontologies/SemioticCommunicationTheory.owl#code-role">
+        <rdf:type rdf:resource="http://www.loa-cnr.it/ontologies/ExtendedDnS.owl#description-role"/>
+        <rdf:type rdf:resource="http://www.loa-cnr.it/ontologies/SemioticCommunicationTheory.owl#communication-role"/>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.loa-cnr.it/ontologies/ExtendedDnS.owl#played-by"/>
+                <owl:allValuesFrom rdf:resource="http://www.loa-cnr.it/ontologies/ExtendedDnS.owl#information-encoding-system"/>
+            </owl:Restriction>
+        </rdf:type>
+        <edns:defined-by rdf:resource="http://www.loa-cnr.it/ontologies/SemioticCommunicationTheory.owl#s-communication-theory"/>
+        <rdfs:comment>The code role in Jakobson&apos;s theory of communication, which should be played by an information-encoding-system.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.loa-cnr.it/ontologies/SemioticCommunicationTheory.owl#decoder-role -->
+
+    <owl:NamedIndividual rdf:about="http://www.loa-cnr.it/ontologies/SemioticCommunicationTheory.owl#decoder-role">
+        <rdf:type rdf:resource="http://www.loa-cnr.it/ontologies/ExtendedDnS.owl#agent-driven-role"/>
+        <rdf:type rdf:resource="http://www.loa-cnr.it/ontologies/SemioticCommunicationTheory.owl#communication-role"/>
+        <edns:defined-by rdf:resource="http://www.loa-cnr.it/ontologies/SemioticCommunicationTheory.owl#semiotic-interpretation-function"/>
+        <edns:specializes rdf:resource="http://www.loa-cnr.it/ontologies/SemioticCommunicationTheory.owl#interpreter-role"/>
+        <rdfs:comment>A specialization of the interpreter role, played by the agents trying to conceive the description expressed by some information object created by agents playing the encoder role.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.loa-cnr.it/ontologies/SemioticCommunicationTheory.owl#encoder-role -->
+
+    <owl:NamedIndividual rdf:about="http://www.loa-cnr.it/ontologies/SemioticCommunicationTheory.owl#encoder-role">
+        <rdf:type rdf:resource="http://www.loa-cnr.it/ontologies/ExtendedDnS.owl#agent-driven-role"/>
+        <rdf:type rdf:resource="http://www.loa-cnr.it/ontologies/SemioticCommunicationTheory.owl#communication-role"/>
+        <edns:defined-by rdf:resource="http://www.loa-cnr.it/ontologies/SemioticCommunicationTheory.owl#semiotic-interpretation-function"/>
+        <edns:specializes rdf:resource="http://www.loa-cnr.it/ontologies/SemioticCommunicationTheory.owl#interpreter-role"/>
+        <rdfs:comment>A specialization of the interpreter role, played by creators of information objects expressing some description.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.loa-cnr.it/ontologies/SemioticCommunicationTheory.owl#expression -->
+
+    <owl:NamedIndividual rdf:about="http://www.loa-cnr.it/ontologies/SemioticCommunicationTheory.owl#expression">
+        <rdf:type rdf:resource="http://www.loa-cnr.it/ontologies/SemioticCommunicationTheory.owl#semiotic-role"/>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.loa-cnr.it/ontologies/ExtendedDnS.owl#played-by"/>
+                <owl:allValuesFrom rdf:resource="http://www.loa-cnr.it/ontologies/ExtendedDnS.owl#information-object"/>
+            </owl:Restriction>
+        </rdf:type>
+        <edns:defined-by rdf:resource="http://www.loa-cnr.it/ontologies/SemioticCommunicationTheory.owl#semiotic-interpretation-function"/>
+        <rdfs:comment>Expression is a semiotic role played by information objects. It is used to fill the first domain of the  so-called &apos;interpretation function&apos;. It can be considered equivalent to the &apos;message&apos; communication role, but since communication theory and semiotic theories are different, it is more correct to say that a message role specializes an expression role.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.loa-cnr.it/ontologies/SemioticCommunicationTheory.owl#interpreter-role -->
+
+    <owl:NamedIndividual rdf:about="http://www.loa-cnr.it/ontologies/SemioticCommunicationTheory.owl#interpreter-role">
+        <rdf:type rdf:resource="http://www.loa-cnr.it/ontologies/ExtendedDnS.owl#agent-driven-role"/>
+        <rdf:type rdf:resource="http://www.loa-cnr.it/ontologies/SemioticCommunicationTheory.owl#communication-role"/>
+        <edns:defined-by rdf:resource="http://www.loa-cnr.it/ontologies/SemioticCommunicationTheory.owl#s-communication-theory"/>
+        <edns:specialized-by rdf:resource="http://www.loa-cnr.it/ontologies/SemioticCommunicationTheory.owl#decoder-role"/>
+        <edns:specialized-by rdf:resource="http://www.loa-cnr.it/ontologies/SemioticCommunicationTheory.owl#encoder-role"/>
+        <rdfs:comment>A generalization of the encoder and decoder roles in Jakobson&apos;s theory of communication, which should be played by an agent.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.loa-cnr.it/ontologies/SemioticCommunicationTheory.owl#meaning -->
+
+    <owl:NamedIndividual rdf:about="http://www.loa-cnr.it/ontologies/SemioticCommunicationTheory.owl#meaning">
+        <rdf:type rdf:resource="http://www.loa-cnr.it/ontologies/ExtendedDnS.owl#description-role"/>
+        <rdf:type rdf:resource="http://www.loa-cnr.it/ontologies/SemioticCommunicationTheory.owl#semiotic-role"/>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.loa-cnr.it/ontologies/ExtendedDnS.owl#played-by"/>
+                <owl:allValuesFrom rdf:resource="http://www.loa-cnr.it/ontologies/ExtendedDnS.owl#description"/>
+            </owl:Restriction>
+        </rdf:type>
+        <edns:defined-by rdf:resource="http://www.loa-cnr.it/ontologies/SemioticCommunicationTheory.owl#semiotic-interpretation-function"/>
+        <rdfs:comment>Meaning is a semiotic role played by descriptions whatsoever. It is used to fill the range of the  so-called &apos;interpretation function&apos;.It is not equivalent to any communication function.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.loa-cnr.it/ontologies/SemioticCommunicationTheory.owl#message-role -->
+
+    <owl:NamedIndividual rdf:about="http://www.loa-cnr.it/ontologies/SemioticCommunicationTheory.owl#message-role">
+        <rdf:type rdf:resource="http://www.loa-cnr.it/ontologies/SemioticCommunicationTheory.owl#communication-role"/>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.loa-cnr.it/ontologies/ExtendedDnS.owl#played-by"/>
+                <owl:allValuesFrom rdf:resource="http://www.loa-cnr.it/ontologies/ExtendedDnS.owl#information-object"/>
+            </owl:Restriction>
+        </rdf:type>
+        <edns:defined-by rdf:resource="http://www.loa-cnr.it/ontologies/SemioticCommunicationTheory.owl#s-communication-theory"/>
+        <rdfs:comment>The message role in Jakobson&apos;s theory of communication, played by information objects. It specializes the expression role from semiotic interpretation theory.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.loa-cnr.it/ontologies/SemioticCommunicationTheory.owl#s-communication-theory -->
+
+    <owl:NamedIndividual rdf:about="http://www.loa-cnr.it/ontologies/SemioticCommunicationTheory.owl#s-communication-theory">
+        <rdf:type rdf:resource="http://www.loa-cnr.it/ontologies/ExtendedDnS.owl#theory"/>
+        <edns:defines rdf:resource="http://www.loa-cnr.it/ontologies/SemioticCommunicationTheory.owl#c-context"/>
+        <edns:defines rdf:resource="http://www.loa-cnr.it/ontologies/SemioticCommunicationTheory.owl#channel-role"/>
+        <edns:defines rdf:resource="http://www.loa-cnr.it/ontologies/SemioticCommunicationTheory.owl#code-role"/>
+        <edns:defines rdf:resource="http://www.loa-cnr.it/ontologies/SemioticCommunicationTheory.owl#interpreter-role"/>
+        <edns:defines rdf:resource="http://www.loa-cnr.it/ontologies/SemioticCommunicationTheory.owl#message-role"/>
+        <rdfs:comment>Jakobson defined six functions of communication that are compatible with Shannon&apos;s theory of information. They are the &apos;message&apos;, here covered by &apos;Message-Role&apos;, the context, covered here by &apos;C-Context&apos;, the code, covered by &apos;Code&apos;, plus &apos;Channel&apos;, &apos;Encoder&apos;, and &apos;Decoder&apos;, which are introduced below. Message-Role, C-Context, and Code can also be viewed as playing a semiotic role (Expression, S-Context, Semiotic-Code). For a communication theory in general, we also need other components that are not specified in Jakobson&apos;s theory&apos;, e.g. &apos;turn-taking&apos;, governing the sequence of a communication process,  &apos;communication parameters&apos;, governing the values that participants and events of a communication should have in order for the communication to be  successful (i.e. for the communication method to be satisfied), &apos;conversational maxims&apos; (superordered theories) that provide guidelines for communication to be successful, etc.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.loa-cnr.it/ontologies/SemioticCommunicationTheory.owl#s-context -->
+
+    <owl:NamedIndividual rdf:about="http://www.loa-cnr.it/ontologies/SemioticCommunicationTheory.owl#s-context">
+        <rdf:type rdf:resource="http://www.loa-cnr.it/ontologies/ExtendedDnS.owl#description-role"/>
+        <rdf:type rdf:resource="http://www.loa-cnr.it/ontologies/SemioticCommunicationTheory.owl#semiotic-role"/>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.loa-cnr.it/ontologies/ExtendedDnS.owl#requires"/>
+                <owl:someValuesFrom>
+                    <owl:Class>
+                        <owl:oneOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://www.loa-cnr.it/ontologies/SemioticCommunicationTheory.owl#c-context"/>
+                        </owl:oneOf>
+                    </owl:Class>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.loa-cnr.it/ontologies/ExtendedDnS.owl#played-by"/>
+                <owl:allValuesFrom rdf:resource="http://www.loa-cnr.it/ontologies/ExtendedDnS.owl#description"/>
+            </owl:Restriction>
+        </rdf:type>
+        <edns:defined-by rdf:resource="http://www.loa-cnr.it/ontologies/SemioticCommunicationTheory.owl#semiotic-interpretation-function"/>
+        <rdfs:comment>S-context (semiotic context) is played by descriptions and is a semiotic role. It is used to fill the second domain of the  so-called &apos;interpretation function&apos;.It may be equivalent to the &apos;c-context&apos; communication role, but since communication theory and semiotic theories are different, it is more correct to say that c-context (communication context) specializes s-context.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.loa-cnr.it/ontologies/SemioticCommunicationTheory.owl#semiotic-interpretation-function -->
+
+    <owl:NamedIndividual rdf:about="http://www.loa-cnr.it/ontologies/SemioticCommunicationTheory.owl#semiotic-interpretation-function">
+        <rdf:type rdf:resource="http://www.loa-cnr.it/ontologies/ExtendedDnS.owl#relation"/>
+        <edns:defines rdf:resource="http://www.loa-cnr.it/ontologies/SemioticCommunicationTheory.owl#decoder-role"/>
+        <edns:defines rdf:resource="http://www.loa-cnr.it/ontologies/SemioticCommunicationTheory.owl#encoder-role"/>
+        <edns:defines rdf:resource="http://www.loa-cnr.it/ontologies/SemioticCommunicationTheory.owl#expression"/>
+        <edns:defines rdf:resource="http://www.loa-cnr.it/ontologies/SemioticCommunicationTheory.owl#meaning"/>
+        <edns:defines rdf:resource="http://www.loa-cnr.it/ontologies/SemioticCommunicationTheory.owl#s-context"/>
+        <rdfs:comment>Interpretation functions are descriptions that can include roles either for semiotics or for formal semantics.Here we only characterize a basic, simple theory of semiotic interpretation. Three semiotic roles are defined: s-context (semiotic context), expression, and meaning.It has complex dependencies to mental objects, social objects, as well as references to entities as such, but we currently prefer to put it here as a placeholder (a forthcoming ontology of mind should give some more detail on those issues). See semiotic roles for further comments.</rdfs:comment>
+    </owl:NamedIndividual>
+    <rdf:Description>
+        <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1</owl:minCardinality>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi -->
+
